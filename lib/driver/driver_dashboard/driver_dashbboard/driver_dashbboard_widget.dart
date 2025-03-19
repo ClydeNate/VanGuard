@@ -151,8 +151,9 @@ class _DriverDashbboardWidgetState extends State<DriverDashbboardWidget> {
                           ),
                         ),
                         FFButtonWidget(
-                          onPressed: () {
-                            print('Button pressed ...');
+                          onPressed: () async {
+                            context
+                                .pushNamed(DriverPrevRecordsWidget.routeName);
                           },
                           text: 'Check Previous Records',
                           options: FFButtonOptions(

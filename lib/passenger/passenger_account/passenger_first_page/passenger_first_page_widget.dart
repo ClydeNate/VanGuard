@@ -149,7 +149,7 @@ class _PassengerFirstPageWidgetState extends State<PassengerFirstPageWidget> {
                                     FFButtonWidget(
                                       onPressed: () async {
                                         context.pushNamed(
-                                            DriverSignUpWidget.routeName);
+                                            PassengerSignUpWidget.routeName);
                                       },
                                       text: 'New Passenger',
                                       options: FFButtonOptions(
@@ -185,7 +185,7 @@ class _PassengerFirstPageWidgetState extends State<PassengerFirstPageWidget> {
                                       child: FFButtonWidget(
                                         onPressed: () async {
                                           context.pushNamed(
-                                              DriverLoginWidget.routeName);
+                                              PassengerLoginWidget.routeName);
                                         },
                                         text: 'Existing Passenger',
                                         options: FFButtonOptions(

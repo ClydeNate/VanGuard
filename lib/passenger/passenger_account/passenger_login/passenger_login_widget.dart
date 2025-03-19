@@ -481,7 +481,7 @@ class _PassengerLoginWidgetState extends State<PassengerLoginWidget> {
                                   child: FFButtonWidget(
                                     onPressed: () async {
                                       context.pushNamed(
-                                          DriverDashbboardWidget.routeName);
+                                          ApplicationWidget.routeName);
                                     },
                                     text: 'Done',
                                     options: FFButtonOptions(

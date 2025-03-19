@@ -541,7 +541,7 @@ class _PassengerSignUpWidgetState extends State<PassengerSignUpWidget> {
                                                       .text ==
                                                   '')) {
                                         context.pushNamed(
-                                            DriverDashbboardWidget.routeName);
+                                            ApplicationWidget.routeName);
                                       } else {
                                         return;
                                       }

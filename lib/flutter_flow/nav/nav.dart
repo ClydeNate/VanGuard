@@ -76,11 +76,6 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           builder: (context, params) => PassengerSideWidget(),
         ),
         FFRoute(
-          name: ApplicationListWidget.routeName,
-          path: ApplicationListWidget.routePath,
-          builder: (context, params) => ApplicationListWidget(),
-        ),
-        FFRoute(
           name: DriverFirstPageWidget.routeName,
           path: DriverFirstPageWidget.routePath,
           builder: (context, params) => DriverFirstPageWidget(),

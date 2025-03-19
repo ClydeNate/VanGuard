@@ -117,6 +117,8 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                       .displaySmall
                                       .override(
                                         fontFamily: 'Google Sans Family',
+                                        color: FlutterFlowTheme.of(context)
+                                            .secondaryText,
                                         fontSize: 24.0,
                                         letterSpacing: 0.0,
                                         fontWeight: FontWeight.normal,
@@ -176,7 +178,8 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                         child: FFButtonWidget(
                                           onPressed: () async {
                                             context.pushNamed(
-                                                PassengerSoonWidget.routeName);
+                                                PassengerFirstPageWidget
+                                                    .routeName);
                                           },
                                           text: 'Passenger',
                                           options: FFButtonOptions(
@@ -199,7 +202,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                                       color:
                                                           FlutterFlowTheme.of(
                                                                   context)
-                                                              .secondaryText,
+                                                              .primaryText,
                                                       letterSpacing: 0.0,
                                                       useGoogleFonts: false,
                                                     ),

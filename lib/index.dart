@@ -1,8 +1,6 @@
 // Export pages
 export '/passenger/passenger_side/passenger_side_widget.dart'
     show PassengerSideWidget;
-export '/passenger/application_list/application_list_widget.dart'
-    show ApplicationListWidget;
 export '/driver/driver_account/driver_first_page/driver_first_page_widget.dart'
     show DriverFirstPageWidget;
 export '/main_pages/loading_frame/loading_frame_widget.dart'
