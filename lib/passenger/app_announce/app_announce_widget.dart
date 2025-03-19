@@ -3,34 +3,33 @@ import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import 'dart:ui';
-import '/index.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
-import 'application_model.dart';
-export 'application_model.dart';
+import 'app_announce_model.dart';
+export 'app_announce_model.dart';
 
 /// Resize the components and make it even
-class ApplicationWidget extends StatefulWidget {
-  const ApplicationWidget({super.key});
+class AppAnnounceWidget extends StatefulWidget {
+  const AppAnnounceWidget({super.key});
 
-  static String routeName = 'Application';
-  static String routePath = '/application';
+  static String routeName = 'AppAnnounce';
+  static String routePath = '/appAnnounce';
 
   @override
-  State<ApplicationWidget> createState() => _ApplicationWidgetState();
+  State<AppAnnounceWidget> createState() => _AppAnnounceWidgetState();
 }
 
-class _ApplicationWidgetState extends State<ApplicationWidget> {
-  late ApplicationModel _model;
+class _AppAnnounceWidgetState extends State<AppAnnounceWidget> {
+  late AppAnnounceModel _model;
 
   final scaffoldKey = GlobalKey<ScaffoldState>();
 
   @override
   void initState() {
     super.initState();
-    _model = createModel(context, () => ApplicationModel());
+    _model = createModel(context, () => AppAnnounceModel());
 
     _model.textController ??= TextEditingController();
     _model.textFieldFocusNode ??= FocusNode();
@@ -163,10 +162,7 @@ class _ApplicationWidgetState extends State<ApplicationWidget> {
                                 focusColor: Colors.transparent,
                                 hoverColor: Colors.transparent,
                                 highlightColor: Colors.transparent,
-                                onTap: () async {
-                                  context
-                                      .pushNamed(AppAnnounceWidget.routeName);
-                                },
+                                onTap: () async {},
                                 child: ClipRRect(
                                   borderRadius: BorderRadius.circular(8.0),
                                   child: Image.network(
@@ -215,24 +211,14 @@ class _ApplicationWidgetState extends State<ApplicationWidget> {
                           children: [
                             Align(
                               alignment: AlignmentDirectional(0.0, 0.0),
-                              child: InkWell(
-                                splashColor: Colors.transparent,
-                                focusColor: Colors.transparent,
-                                hoverColor: Colors.transparent,
-                                highlightColor: Colors.transparent,
-                                onTap: () async {
-                                  context
-                                      .pushNamed(PassengerSideWidget.routeName);
-                                },
-                                child: ClipRRect(
-                                  borderRadius: BorderRadius.circular(8.0),
-                                  child: Image.network(
-                                    'https://i.pinimg.com/736x/30/a9/86/30a986ef027ca81196ee1b8d0364e517.jpg',
-                                    width: 360.0,
-                                    height: 160.0,
-                                    fit: BoxFit.cover,
-                                    alignment: Alignment(0.0, -1.0),
-                                  ),
+                              child: ClipRRect(
+                                borderRadius: BorderRadius.circular(8.0),
+                                child: Image.network(
+                                  'https://i.pinimg.com/736x/30/a9/86/30a986ef027ca81196ee1b8d0364e517.jpg',
+                                  width: 360.0,
+                                  height: 160.0,
+                                  fit: BoxFit.cover,
+                                  alignment: Alignment(0.0, -1.0),
                                 ),
                               ),
                             ),
@@ -272,23 +258,13 @@ class _ApplicationWidgetState extends State<ApplicationWidget> {
                           children: [
                             Align(
                               alignment: AlignmentDirectional(0.0, 0.0),
-                              child: InkWell(
-                                splashColor: Colors.transparent,
-                                focusColor: Colors.transparent,
-                                hoverColor: Colors.transparent,
-                                highlightColor: Colors.transparent,
-                                onTap: () async {
-                                  context
-                                      .pushNamed(AppCityRoutesWidget.routeName);
-                                },
-                                child: ClipRRect(
-                                  borderRadius: BorderRadius.circular(8.0),
-                                  child: Image.network(
-                                    'https://i.pinimg.com/736x/d3/ec/06/d3ec0656e7cf5c0321ec3821e312dbf7.jpg',
-                                    width: 360.0,
-                                    height: 160.0,
-                                    fit: BoxFit.cover,
-                                  ),
+                              child: ClipRRect(
+                                borderRadius: BorderRadius.circular(8.0),
+                                child: Image.network(
+                                  'https://i.pinimg.com/736x/d3/ec/06/d3ec0656e7cf5c0321ec3821e312dbf7.jpg',
+                                  width: 360.0,
+                                  height: 160.0,
+                                  fit: BoxFit.cover,
                                 ),
                               ),
                             ),
@@ -328,23 +304,14 @@ class _ApplicationWidgetState extends State<ApplicationWidget> {
                           children: [
                             Align(
                               alignment: AlignmentDirectional(0.0, 0.0),
-                              child: InkWell(
-                                splashColor: Colors.transparent,
-                                focusColor: Colors.transparent,
-                                hoverColor: Colors.transparent,
-                                highlightColor: Colors.transparent,
-                                onTap: () async {
-                                  context.pushNamed(AppAboutWidget.routeName);
-                                },
-                                child: ClipRRect(
-                                  borderRadius: BorderRadius.circular(8.0),
-                                  child: Image.network(
-                                    'https://i.pinimg.com/736x/e4/b5/51/e4b55142b1aa46fab472988a537e84d5.jpg',
-                                    width: 360.0,
-                                    height: 180.5,
-                                    fit: BoxFit.fitWidth,
-                                    alignment: Alignment(0.0, 0.0),
-                                  ),
+                              child: ClipRRect(
+                                borderRadius: BorderRadius.circular(8.0),
+                                child: Image.network(
+                                  'https://i.pinimg.com/736x/e4/b5/51/e4b55142b1aa46fab472988a537e84d5.jpg',
+                                  width: 360.0,
+                                  height: 180.5,
+                                  fit: BoxFit.fitWidth,
+                                  alignment: Alignment(0.0, 0.0),
                                 ),
                               ),
                             ),

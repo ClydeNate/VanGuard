@@ -136,24 +136,19 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           builder: (context, params) => DriverDashbboardWidget(),
         ),
         FFRoute(
-          name: PassengerSoonWidget.routeName,
-          path: PassengerSoonWidget.routePath,
-          builder: (context, params) => PassengerSoonWidget(),
-        ),
-        FFRoute(
           name: DriverPrevRecordsWidget.routeName,
           path: DriverPrevRecordsWidget.routePath,
           builder: (context, params) => DriverPrevRecordsWidget(),
         ),
         FFRoute(
-          name: AboutWidget.routeName,
-          path: AboutWidget.routePath,
-          builder: (context, params) => AboutWidget(),
+          name: AppAboutWidget.routeName,
+          path: AppAboutWidget.routePath,
+          builder: (context, params) => AppAboutWidget(),
         ),
         FFRoute(
-          name: CityRoutesWidget.routeName,
-          path: CityRoutesWidget.routePath,
-          builder: (context, params) => CityRoutesWidget(),
+          name: AppCityRoutesWidget.routeName,
+          path: AppCityRoutesWidget.routePath,
+          builder: (context, params) => AppCityRoutesWidget(),
         ),
         FFRoute(
           name: ApplicationWidget.routeName,
@@ -174,6 +169,16 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           name: PassengerSignUpWidget.routeName,
           path: PassengerSignUpWidget.routePath,
           builder: (context, params) => PassengerSignUpWidget(),
+        ),
+        FFRoute(
+          name: AppAnnounceWidget.routeName,
+          path: AppAnnounceWidget.routePath,
+          builder: (context, params) => AppAnnounceWidget(),
+        ),
+        FFRoute(
+          name: AppScheduleWidget.routeName,
+          path: AppScheduleWidget.routePath,
+          builder: (context, params) => AppScheduleWidget(),
         )
       ].map((r) => r.toRoute(appStateNotifier)).toList(),
     );

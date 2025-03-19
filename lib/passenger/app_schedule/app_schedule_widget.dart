@@ -8,29 +8,29 @@ import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
-import 'application_model.dart';
-export 'application_model.dart';
+import 'app_schedule_model.dart';
+export 'app_schedule_model.dart';
 
 /// Resize the components and make it even
-class ApplicationWidget extends StatefulWidget {
-  const ApplicationWidget({super.key});
+class AppScheduleWidget extends StatefulWidget {
+  const AppScheduleWidget({super.key});
 
-  static String routeName = 'Application';
-  static String routePath = '/application';
+  static String routeName = 'AppSchedule';
+  static String routePath = '/appSchedule';
 
   @override
-  State<ApplicationWidget> createState() => _ApplicationWidgetState();
+  State<AppScheduleWidget> createState() => _AppScheduleWidgetState();
 }
 
-class _ApplicationWidgetState extends State<ApplicationWidget> {
-  late ApplicationModel _model;
+class _AppScheduleWidgetState extends State<AppScheduleWidget> {
+  late AppScheduleModel _model;
 
   final scaffoldKey = GlobalKey<ScaffoldState>();
 
   @override
   void initState() {
     super.initState();
-    _model = createModel(context, () => ApplicationModel());
+    _model = createModel(context, () => AppScheduleModel());
 
     _model.textController ??= TextEditingController();
     _model.textFieldFocusNode ??= FocusNode();
@@ -163,10 +163,7 @@ class _ApplicationWidgetState extends State<ApplicationWidget> {
                                 focusColor: Colors.transparent,
                                 hoverColor: Colors.transparent,
                                 highlightColor: Colors.transparent,
-                                onTap: () async {
-                                  context
-                                      .pushNamed(AppAnnounceWidget.routeName);
-                                },
+                                onTap: () async {},
                                 child: ClipRRect(
                                   borderRadius: BorderRadius.circular(8.0),
                                   child: Image.network(
@@ -222,7 +219,7 @@ class _ApplicationWidgetState extends State<ApplicationWidget> {
                                 highlightColor: Colors.transparent,
                                 onTap: () async {
                                   context
-                                      .pushNamed(PassengerSideWidget.routeName);
+                                      .pushNamed(AppScheduleWidget.routeName);
                                 },
                                 child: ClipRRect(
                                   borderRadius: BorderRadius.circular(8.0),
@@ -272,23 +269,13 @@ class _ApplicationWidgetState extends State<ApplicationWidget> {
                           children: [
                             Align(
                               alignment: AlignmentDirectional(0.0, 0.0),
-                              child: InkWell(
-                                splashColor: Colors.transparent,
-                                focusColor: Colors.transparent,
-                                hoverColor: Colors.transparent,
-                                highlightColor: Colors.transparent,
-                                onTap: () async {
-                                  context
-                                      .pushNamed(AppCityRoutesWidget.routeName);
-                                },
-                                child: ClipRRect(
-                                  borderRadius: BorderRadius.circular(8.0),
-                                  child: Image.network(
-                                    'https://i.pinimg.com/736x/d3/ec/06/d3ec0656e7cf5c0321ec3821e312dbf7.jpg',
-                                    width: 360.0,
-                                    height: 160.0,
-                                    fit: BoxFit.cover,
-                                  ),
+                              child: ClipRRect(
+                                borderRadius: BorderRadius.circular(8.0),
+                                child: Image.network(
+                                  'https://i.pinimg.com/736x/d3/ec/06/d3ec0656e7cf5c0321ec3821e312dbf7.jpg',
+                                  width: 360.0,
+                                  height: 160.0,
+                                  fit: BoxFit.cover,
                                 ),
                               ),
                             ),
@@ -328,23 +315,14 @@ class _ApplicationWidgetState extends State<ApplicationWidget> {
                           children: [
                             Align(
                               alignment: AlignmentDirectional(0.0, 0.0),
-                              child: InkWell(
-                                splashColor: Colors.transparent,
-                                focusColor: Colors.transparent,
-                                hoverColor: Colors.transparent,
-                                highlightColor: Colors.transparent,
-                                onTap: () async {
-                                  context.pushNamed(AppAboutWidget.routeName);
-                                },
-                                child: ClipRRect(
-                                  borderRadius: BorderRadius.circular(8.0),
-                                  child: Image.network(
-                                    'https://i.pinimg.com/736x/e4/b5/51/e4b55142b1aa46fab472988a537e84d5.jpg',
-                                    width: 360.0,
-                                    height: 180.5,
-                                    fit: BoxFit.fitWidth,
-                                    alignment: Alignment(0.0, 0.0),
-                                  ),
+                              child: ClipRRect(
+                                borderRadius: BorderRadius.circular(8.0),
+                                child: Image.network(
+                                  'https://i.pinimg.com/736x/e4/b5/51/e4b55142b1aa46fab472988a537e84d5.jpg',
+                                  width: 360.0,
+                                  height: 180.5,
+                                  fit: BoxFit.fitWidth,
+                                  alignment: Alignment(0.0, 0.0),
                                 ),
                               ),
                             ),
