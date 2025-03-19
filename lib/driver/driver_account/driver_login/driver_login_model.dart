@@ -3,25 +3,16 @@ import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import 'dart:ui';
 import '/index.dart';
-import 'driver_sign_up_widget.dart' show DriverSignUpWidget;
+import 'driver_login_widget.dart' show DriverLoginWidget;
 import 'package:cached_network_image/cached_network_image.dart';
-import 'package:easy_debounce/easy_debounce.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 
-class DriverSignUpModel extends FlutterFlowModel<DriverSignUpWidget> {
+class DriverLoginModel extends FlutterFlowModel<DriverLoginWidget> {
   ///  State fields for stateful widgets in this page.
 
-  // State field(s) for Name widget.
-  FocusNode? nameFocusNode;
-  TextEditingController? nameTextController;
-  String? Function(BuildContext, String?)? nameTextControllerValidator;
-  // State field(s) for ContactNumber widget.
-  FocusNode? contactNumberFocusNode;
-  TextEditingController? contactNumberTextController;
-  String? Function(BuildContext, String?)? contactNumberTextControllerValidator;
   // State field(s) for LicenseNumber widget.
   FocusNode? licenseNumberFocusNode;
   TextEditingController? licenseNumberTextController;
@@ -43,12 +34,6 @@ class DriverSignUpModel extends FlutterFlowModel<DriverSignUpWidget> {
 
   @override
   void dispose() {
-    nameFocusNode?.dispose();
-    nameTextController?.dispose();
-
-    contactNumberFocusNode?.dispose();
-    contactNumberTextController?.dispose();
-
     licenseNumberFocusNode?.dispose();
     licenseNumberTextController?.dispose();
 

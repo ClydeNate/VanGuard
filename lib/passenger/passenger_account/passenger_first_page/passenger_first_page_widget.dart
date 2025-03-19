@@ -8,29 +8,30 @@ import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
-import 'driver_first_page_model.dart';
-export 'driver_first_page_model.dart';
+import 'passenger_first_page_model.dart';
+export 'passenger_first_page_model.dart';
 
 /// login as a driver page 1
-class DriverFirstPageWidget extends StatefulWidget {
-  const DriverFirstPageWidget({super.key});
+class PassengerFirstPageWidget extends StatefulWidget {
+  const PassengerFirstPageWidget({super.key});
 
-  static String routeName = 'DriverFirstPage';
-  static String routePath = '/driverFirstPage';
+  static String routeName = 'PassengerFirstPage';
+  static String routePath = '/passengerFirstPage';
 
   @override
-  State<DriverFirstPageWidget> createState() => _DriverFirstPageWidgetState();
+  State<PassengerFirstPageWidget> createState() =>
+      _PassengerFirstPageWidgetState();
 }
 
-class _DriverFirstPageWidgetState extends State<DriverFirstPageWidget> {
-  late DriverFirstPageModel _model;
+class _PassengerFirstPageWidgetState extends State<PassengerFirstPageWidget> {
+  late PassengerFirstPageModel _model;
 
   final scaffoldKey = GlobalKey<ScaffoldState>();
 
   @override
   void initState() {
     super.initState();
-    _model = createModel(context, () => DriverFirstPageModel());
+    _model = createModel(context, () => PassengerFirstPageModel());
   }
 
   @override
@@ -109,7 +110,7 @@ class _DriverFirstPageWidgetState extends State<DriverFirstPageWidget> {
                             Align(
                               alignment: AlignmentDirectional(0.0, 0.0),
                               child: Text(
-                                'Driver\'s Information',
+                                'Account Information',
                                 style: FlutterFlowTheme.of(context)
                                     .displaySmall
                                     .override(
@@ -150,7 +151,7 @@ class _DriverFirstPageWidgetState extends State<DriverFirstPageWidget> {
                                         context.pushNamed(
                                             DriverSignUpWidget.routeName);
                                       },
-                                      text: 'New Driver',
+                                      text: 'New Passenger',
                                       options: FFButtonOptions(
                                         width: 370.0,
                                         height: 40.0,
@@ -186,7 +187,7 @@ class _DriverFirstPageWidgetState extends State<DriverFirstPageWidget> {
                                           context.pushNamed(
                                               DriverLoginWidget.routeName);
                                         },
-                                        text: 'Existing Driver',
+                                        text: 'Existing Passenger',
                                         options: FFButtonOptions(
                                           width: 370.0,
                                           height: 44.0,

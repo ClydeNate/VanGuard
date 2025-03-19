@@ -1,52 +1,51 @@
+import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import 'dart:ui';
 import '/index.dart';
 import 'package:cached_network_image/cached_network_image.dart';
-import 'package:easy_debounce/easy_debounce.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
-import 'driver_sign_up_model.dart';
-export 'driver_sign_up_model.dart';
+import 'passenger_login_model.dart';
+export 'passenger_login_model.dart';
 
 /// login as a driver page 1
-class DriverSignUpWidget extends StatefulWidget {
-  const DriverSignUpWidget({super.key});
+class PassengerLoginWidget extends StatefulWidget {
+  const PassengerLoginWidget({super.key});
 
-  static String routeName = 'DriverSignUp';
-  static String routePath = '/driverSignUp';
+  static String routeName = 'PassengerLogin';
+  static String routePath = '/passengerLogin';
 
   @override
-  State<DriverSignUpWidget> createState() => _DriverSignUpWidgetState();
+  State<PassengerLoginWidget> createState() => _PassengerLoginWidgetState();
 }
 
-class _DriverSignUpWidgetState extends State<DriverSignUpWidget> {
-  late DriverSignUpModel _model;
+class _PassengerLoginWidgetState extends State<PassengerLoginWidget> {
+  late PassengerLoginModel _model;
 
   final scaffoldKey = GlobalKey<ScaffoldState>();
 
   @override
   void initState() {
     super.initState();
-    _model = createModel(context, () => DriverSignUpModel());
-
-    _model.nameTextController ??= TextEditingController();
-    _model.nameFocusNode ??= FocusNode();
-
-    _model.contactNumberTextController ??= TextEditingController();
-    _model.contactNumberFocusNode ??= FocusNode();
-
-    _model.licenseNumberTextController ??= TextEditingController();
-    _model.licenseNumberFocusNode ??= FocusNode();
+    _model = createModel(context, () => PassengerLoginModel());
 
     _model.plateNumberTextController ??= TextEditingController();
     _model.plateNumberFocusNode ??= FocusNode();
 
+    _model.licenseNumberTextController ??= TextEditingController();
+    _model.licenseNumberFocusNode ??= FocusNode();
+
     _model.passwordTextController ??= TextEditingController();
     _model.passwordFocusNode ??= FocusNode();
+
+    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {
+          _model.licenseNumberTextController?.text = '@gmail.com';
+        }));
   }
 
   @override
@@ -66,12 +65,70 @@ class _DriverSignUpWidgetState extends State<DriverSignUpWidget> {
       child: Scaffold(
         key: scaffoldKey,
         backgroundColor: FlutterFlowTheme.of(context).secondaryBackground,
-        appBar: AppBar(
-          backgroundColor: FlutterFlowTheme.of(context).primary,
-          automaticallyImplyLeading: false,
-          actions: [],
-          centerTitle: false,
-          elevation: 2.0,
+        appBar: PreferredSize(
+          preferredSize: Size.fromHeight(100.0),
+          child: AppBar(
+            backgroundColor: FlutterFlowTheme.of(context).primary,
+            automaticallyImplyLeading: false,
+            actions: [],
+            flexibleSpace: FlexibleSpaceBar(
+              title: Padding(
+                padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 14.0),
+                child: Column(
+                  mainAxisSize: MainAxisSize.max,
+                  mainAxisAlignment: MainAxisAlignment.end,
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Padding(
+                      padding:
+                          EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 8.0),
+                      child: Row(
+                        mainAxisSize: MainAxisSize.max,
+                        children: [
+                          Padding(
+                            padding: EdgeInsetsDirectional.fromSTEB(
+                                12.0, 0.0, 0.0, 0.0),
+                            child: FlutterFlowIconButton(
+                              borderColor: Colors.transparent,
+                              borderRadius: 30.0,
+                              borderWidth: 1.0,
+                              buttonSize: 50.0,
+                              icon: FaIcon(
+                                FontAwesomeIcons.carSide,
+                                color: Colors.white,
+                                size: 30.0,
+                              ),
+                              onPressed: () async {
+                                context.pop();
+                              },
+                            ),
+                          ),
+                          Padding(
+                            padding: EdgeInsetsDirectional.fromSTEB(
+                                4.0, 0.0, 0.0, 0.0),
+                            child: Text(
+                              'Back',
+                              style: FlutterFlowTheme.of(context)
+                                  .titleMedium
+                                  .override(
+                                    fontFamily: 'Google Sans Family',
+                                    fontSize: 16.0,
+                                    letterSpacing: 0.0,
+                                    useGoogleFonts: false,
+                                  ),
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+              centerTitle: true,
+              expandedTitleScale: 1.0,
+            ),
+            elevation: 2.0,
+          ),
         ),
         body: SafeArea(
           top: true,
@@ -120,28 +177,35 @@ class _DriverSignUpWidgetState extends State<DriverSignUpWidget> {
                             ),
                           ),
                         ),
-                        Text(
-                          'Driver\'s Information',
-                          style: FlutterFlowTheme.of(context)
-                              .displaySmall
-                              .override(
-                                fontFamily: 'Google Sans Family',
-                                letterSpacing: 0.0,
-                                useGoogleFonts: false,
-                              ),
-                        ),
-                        Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
-                              0.0, 12.0, 0.0, 24.0),
+                        Align(
+                          alignment: AlignmentDirectional(0.0, 0.0),
                           child: Text(
-                            'Let\'s get started by filling out the form below.',
+                            'Passenger\'s Information',
                             style: FlutterFlowTheme.of(context)
-                                .labelMedium
+                                .displaySmall
                                 .override(
                                   fontFamily: 'Google Sans Family',
+                                  fontSize: 32.0,
                                   letterSpacing: 0.0,
                                   useGoogleFonts: false,
                                 ),
+                          ),
+                        ),
+                        Align(
+                          alignment: AlignmentDirectional(0.0, 0.0),
+                          child: Padding(
+                            padding: EdgeInsetsDirectional.fromSTEB(
+                                0.0, 12.0, 0.0, 24.0),
+                            child: Text(
+                              'Enter the correct information in the form below',
+                              style: FlutterFlowTheme.of(context)
+                                  .labelMedium
+                                  .override(
+                                    fontFamily: 'Google Sans Family',
+                                    letterSpacing: 0.0,
+                                    useGoogleFonts: false,
+                                  ),
+                            ),
                           ),
                         ),
                         Align(
@@ -158,286 +222,14 @@ class _DriverSignUpWidgetState extends State<DriverSignUpWidget> {
                                   child: Container(
                                     width: 370.0,
                                     child: TextFormField(
-                                      controller: _model.nameTextController,
-                                      focusNode: _model.nameFocusNode,
-                                      onChanged: (_) => EasyDebounce.debounce(
-                                        '_model.nameTextController',
-                                        Duration(milliseconds: 2000),
-                                        () async {
-                                          safeSetState(() {
-                                            _model.nameTextController?.text =
-                                                _model.nameTextController.text;
-                                          });
-                                        },
-                                      ),
-                                      autofocus: true,
-                                      autofillHints: [AutofillHints.name],
-                                      obscureText: false,
-                                      decoration: InputDecoration(
-                                        labelText: 'Name',
-                                        labelStyle: FlutterFlowTheme.of(context)
-                                            .labelMedium
-                                            .override(
-                                              fontFamily: 'Google Sans Family',
-                                              letterSpacing: 0.0,
-                                              useGoogleFonts: false,
-                                            ),
-                                        enabledBorder: OutlineInputBorder(
-                                          borderSide: BorderSide(
-                                            color: FlutterFlowTheme.of(context)
-                                                .primaryBackground,
-                                            width: 2.0,
-                                          ),
-                                          borderRadius:
-                                              BorderRadius.circular(12.0),
-                                        ),
-                                        focusedBorder: OutlineInputBorder(
-                                          borderSide: BorderSide(
-                                            color: FlutterFlowTheme.of(context)
-                                                .primary,
-                                            width: 2.0,
-                                          ),
-                                          borderRadius:
-                                              BorderRadius.circular(12.0),
-                                        ),
-                                        errorBorder: OutlineInputBorder(
-                                          borderSide: BorderSide(
-                                            color: FlutterFlowTheme.of(context)
-                                                .error,
-                                            width: 2.0,
-                                          ),
-                                          borderRadius:
-                                              BorderRadius.circular(12.0),
-                                        ),
-                                        focusedErrorBorder: OutlineInputBorder(
-                                          borderSide: BorderSide(
-                                            color: FlutterFlowTheme.of(context)
-                                                .error,
-                                            width: 2.0,
-                                          ),
-                                          borderRadius:
-                                              BorderRadius.circular(12.0),
-                                        ),
-                                        filled: true,
-                                        fillColor: FlutterFlowTheme.of(context)
-                                            .primaryBackground,
-                                      ),
-                                      style: FlutterFlowTheme.of(context)
-                                          .bodyMedium
-                                          .override(
-                                            fontFamily: 'Inter',
-                                            letterSpacing: 0.0,
-                                          ),
-                                      keyboardType: TextInputType.emailAddress,
-                                      validator: _model
-                                          .nameTextControllerValidator
-                                          .asValidator(context),
-                                    ),
-                                  ),
-                                ),
-                                Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
-                                      0.0, 0.0, 0.0, 16.0),
-                                  child: Container(
-                                    width: 370.0,
-                                    child: TextFormField(
-                                      controller:
-                                          _model.contactNumberTextController,
-                                      focusNode: _model.contactNumberFocusNode,
-                                      onChanged: (_) => EasyDebounce.debounce(
-                                        '_model.contactNumberTextController',
-                                        Duration(milliseconds: 2000),
-                                        () async {
-                                          safeSetState(() {
-                                            _model.contactNumberTextController
-                                                    ?.text =
-                                                _model
-                                                    .contactNumberTextController
-                                                    .text;
-                                          });
-                                        },
-                                      ),
-                                      autofocus: true,
-                                      autofillHints: [
-                                        AutofillHints.telephoneNumber
-                                      ],
-                                      obscureText: false,
-                                      decoration: InputDecoration(
-                                        labelText: 'Contact_Number',
-                                        labelStyle: FlutterFlowTheme.of(context)
-                                            .labelMedium
-                                            .override(
-                                              fontFamily: 'Google Sans Family',
-                                              letterSpacing: 0.0,
-                                              useGoogleFonts: false,
-                                            ),
-                                        hintText: '09123456789',
-                                        enabledBorder: OutlineInputBorder(
-                                          borderSide: BorderSide(
-                                            color: FlutterFlowTheme.of(context)
-                                                .primaryBackground,
-                                            width: 2.0,
-                                          ),
-                                          borderRadius:
-                                              BorderRadius.circular(12.0),
-                                        ),
-                                        focusedBorder: OutlineInputBorder(
-                                          borderSide: BorderSide(
-                                            color: FlutterFlowTheme.of(context)
-                                                .primary,
-                                            width: 2.0,
-                                          ),
-                                          borderRadius:
-                                              BorderRadius.circular(12.0),
-                                        ),
-                                        errorBorder: OutlineInputBorder(
-                                          borderSide: BorderSide(
-                                            color: FlutterFlowTheme.of(context)
-                                                .error,
-                                            width: 2.0,
-                                          ),
-                                          borderRadius:
-                                              BorderRadius.circular(12.0),
-                                        ),
-                                        focusedErrorBorder: OutlineInputBorder(
-                                          borderSide: BorderSide(
-                                            color: FlutterFlowTheme.of(context)
-                                                .error,
-                                            width: 2.0,
-                                          ),
-                                          borderRadius:
-                                              BorderRadius.circular(12.0),
-                                        ),
-                                        filled: true,
-                                        fillColor: FlutterFlowTheme.of(context)
-                                            .primaryBackground,
-                                      ),
-                                      style: FlutterFlowTheme.of(context)
-                                          .bodyMedium
-                                          .override(
-                                            fontFamily: 'Inter',
-                                            letterSpacing: 0.0,
-                                          ),
-                                      keyboardType: TextInputType.emailAddress,
-                                      validator: _model
-                                          .contactNumberTextControllerValidator
-                                          .asValidator(context),
-                                    ),
-                                  ),
-                                ),
-                                Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
-                                      0.0, 0.0, 0.0, 16.0),
-                                  child: Container(
-                                    width: 370.0,
-                                    child: TextFormField(
-                                      controller:
-                                          _model.licenseNumberTextController,
-                                      focusNode: _model.licenseNumberFocusNode,
-                                      onChanged: (_) => EasyDebounce.debounce(
-                                        '_model.licenseNumberTextController',
-                                        Duration(milliseconds: 2000),
-                                        () async {
-                                          safeSetState(() {
-                                            _model.licenseNumberTextController
-                                                    ?.text =
-                                                _model
-                                                    .licenseNumberTextController
-                                                    .text;
-                                          });
-                                        },
-                                      ),
-                                      autofocus: true,
-                                      autofillHints: [AutofillHints.name],
-                                      obscureText: false,
-                                      decoration: InputDecoration(
-                                        labelText: 'License Number',
-                                        labelStyle: FlutterFlowTheme.of(context)
-                                            .labelMedium
-                                            .override(
-                                              fontFamily: 'Google Sans Family',
-                                              letterSpacing: 0.0,
-                                              useGoogleFonts: false,
-                                            ),
-                                        enabledBorder: OutlineInputBorder(
-                                          borderSide: BorderSide(
-                                            color: FlutterFlowTheme.of(context)
-                                                .primaryBackground,
-                                            width: 2.0,
-                                          ),
-                                          borderRadius:
-                                              BorderRadius.circular(12.0),
-                                        ),
-                                        focusedBorder: OutlineInputBorder(
-                                          borderSide: BorderSide(
-                                            color: FlutterFlowTheme.of(context)
-                                                .primary,
-                                            width: 2.0,
-                                          ),
-                                          borderRadius:
-                                              BorderRadius.circular(12.0),
-                                        ),
-                                        errorBorder: OutlineInputBorder(
-                                          borderSide: BorderSide(
-                                            color: FlutterFlowTheme.of(context)
-                                                .error,
-                                            width: 2.0,
-                                          ),
-                                          borderRadius:
-                                              BorderRadius.circular(12.0),
-                                        ),
-                                        focusedErrorBorder: OutlineInputBorder(
-                                          borderSide: BorderSide(
-                                            color: FlutterFlowTheme.of(context)
-                                                .error,
-                                            width: 2.0,
-                                          ),
-                                          borderRadius:
-                                              BorderRadius.circular(12.0),
-                                        ),
-                                        filled: true,
-                                        fillColor: FlutterFlowTheme.of(context)
-                                            .primaryBackground,
-                                      ),
-                                      style: FlutterFlowTheme.of(context)
-                                          .bodyMedium
-                                          .override(
-                                            fontFamily: 'Inter',
-                                            letterSpacing: 0.0,
-                                          ),
-                                      keyboardType: TextInputType.emailAddress,
-                                      validator: _model
-                                          .licenseNumberTextControllerValidator
-                                          .asValidator(context),
-                                    ),
-                                  ),
-                                ),
-                                Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
-                                      0.0, 0.0, 0.0, 16.0),
-                                  child: Container(
-                                    width: 370.0,
-                                    child: TextFormField(
                                       controller:
                                           _model.plateNumberTextController,
                                       focusNode: _model.plateNumberFocusNode,
-                                      onChanged: (_) => EasyDebounce.debounce(
-                                        '_model.plateNumberTextController',
-                                        Duration(milliseconds: 2000),
-                                        () async {
-                                          safeSetState(() {
-                                            _model.plateNumberTextController
-                                                    ?.text =
-                                                _model.plateNumberTextController
-                                                    .text;
-                                          });
-                                        },
-                                      ),
                                       autofocus: true,
                                       autofillHints: [AutofillHints.name],
                                       obscureText: false,
                                       decoration: InputDecoration(
-                                        labelText: 'Plate Number',
+                                        labelText: 'Username',
                                         labelStyle: FlutterFlowTheme.of(context)
                                             .labelMedium
                                             .override(
@@ -488,8 +280,9 @@ class _DriverSignUpWidgetState extends State<DriverSignUpWidget> {
                                       style: FlutterFlowTheme.of(context)
                                           .bodyMedium
                                           .override(
-                                            fontFamily: 'Inter',
+                                            fontFamily: 'Google Sans Family',
                                             letterSpacing: 0.0,
+                                            useGoogleFonts: false,
                                           ),
                                       keyboardType: TextInputType.emailAddress,
                                       validator: _model
@@ -504,25 +297,14 @@ class _DriverSignUpWidgetState extends State<DriverSignUpWidget> {
                                   child: Container(
                                     width: 370.0,
                                     child: TextFormField(
-                                      controller: _model.passwordTextController,
-                                      focusNode: _model.passwordFocusNode,
-                                      onChanged: (_) => EasyDebounce.debounce(
-                                        '_model.passwordTextController',
-                                        Duration(milliseconds: 2000),
-                                        () async {
-                                          safeSetState(() {
-                                            _model.passwordTextController
-                                                    ?.text =
-                                                _model.passwordTextController
-                                                    .text;
-                                          });
-                                        },
-                                      ),
+                                      controller:
+                                          _model.licenseNumberTextController,
+                                      focusNode: _model.licenseNumberFocusNode,
                                       autofocus: true,
                                       autofillHints: [AutofillHints.name],
-                                      obscureText: !_model.passwordVisibility,
+                                      obscureText: false,
                                       decoration: InputDecoration(
-                                        labelText: 'Create Password',
+                                        labelText: 'Email Address',
                                         labelStyle: FlutterFlowTheme.of(context)
                                             .labelMedium
                                             .override(
@@ -530,6 +312,80 @@ class _DriverSignUpWidgetState extends State<DriverSignUpWidget> {
                                               letterSpacing: 0.0,
                                               useGoogleFonts: false,
                                             ),
+                                        enabledBorder: OutlineInputBorder(
+                                          borderSide: BorderSide(
+                                            color: FlutterFlowTheme.of(context)
+                                                .primaryBackground,
+                                            width: 2.0,
+                                          ),
+                                          borderRadius:
+                                              BorderRadius.circular(12.0),
+                                        ),
+                                        focusedBorder: OutlineInputBorder(
+                                          borderSide: BorderSide(
+                                            color: FlutterFlowTheme.of(context)
+                                                .primary,
+                                            width: 2.0,
+                                          ),
+                                          borderRadius:
+                                              BorderRadius.circular(12.0),
+                                        ),
+                                        errorBorder: OutlineInputBorder(
+                                          borderSide: BorderSide(
+                                            color: FlutterFlowTheme.of(context)
+                                                .error,
+                                            width: 2.0,
+                                          ),
+                                          borderRadius:
+                                              BorderRadius.circular(12.0),
+                                        ),
+                                        focusedErrorBorder: OutlineInputBorder(
+                                          borderSide: BorderSide(
+                                            color: FlutterFlowTheme.of(context)
+                                                .error,
+                                            width: 2.0,
+                                          ),
+                                          borderRadius:
+                                              BorderRadius.circular(12.0),
+                                        ),
+                                        filled: true,
+                                        fillColor: FlutterFlowTheme.of(context)
+                                            .primaryBackground,
+                                      ),
+                                      style: FlutterFlowTheme.of(context)
+                                          .bodyMedium
+                                          .override(
+                                            fontFamily: 'Google Sans Family',
+                                            letterSpacing: 0.0,
+                                            useGoogleFonts: false,
+                                          ),
+                                      keyboardType: TextInputType.emailAddress,
+                                      validator: _model
+                                          .licenseNumberTextControllerValidator
+                                          .asValidator(context),
+                                    ),
+                                  ),
+                                ),
+                                Padding(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                      0.0, 0.0, 0.0, 16.0),
+                                  child: Container(
+                                    width: 370.0,
+                                    child: TextFormField(
+                                      controller: _model.passwordTextController,
+                                      focusNode: _model.passwordFocusNode,
+                                      autofocus: true,
+                                      autofillHints: [AutofillHints.name],
+                                      obscureText: !_model.passwordVisibility,
+                                      decoration: InputDecoration(
+                                        labelText: 'Password',
+                                        labelStyle: FlutterFlowTheme.of(context)
+                                            .labelMedium
+                                            .override(
+                                              fontFamily: 'Inter',
+                                              letterSpacing: 0.0,
+                                            ),
+                                        hintText: '***************',
                                         enabledBorder: OutlineInputBorder(
                                           borderSide: BorderSide(
                                             color: FlutterFlowTheme.of(context)
@@ -598,26 +454,34 @@ class _DriverSignUpWidgetState extends State<DriverSignUpWidget> {
                                     ),
                                   ),
                                 ),
+                                Align(
+                                  alignment: AlignmentDirectional(1.0, 0.0),
+                                  child: Padding(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                        0.0, 12.0, 0.0, 24.0),
+                                    child: Text(
+                                      'Forgotten Password?',
+                                      style: FlutterFlowTheme.of(context)
+                                          .labelMedium
+                                          .override(
+                                            fontFamily: 'Google Sans Family',
+                                            letterSpacing: 0.0,
+                                            useGoogleFonts: false,
+                                          ),
+                                    ),
+                                  ),
+                                ),
+                                Divider(
+                                  thickness: 2.0,
+                                  color: Color(0xFF14181B),
+                                ),
                                 Padding(
                                   padding: EdgeInsetsDirectional.fromSTEB(
                                       0.0, 0.0, 0.0, 16.0),
                                   child: FFButtonWidget(
                                     onPressed: () async {
-                                      if ((_model.nameTextController.text !=
-                                                  null &&
-                                              _model.nameTextController.text !=
-                                                  '') &&
-                                          (_model.contactNumberTextController
-                                                      .text ==
-                                                  null ||
-                                              _model.contactNumberTextController
-                                                      .text ==
-                                                  '')) {
-                                        context.pushNamed(
-                                            DriverDashbboardWidget.routeName);
-                                      } else {
-                                        return;
-                                      }
+                                      context.pushNamed(
+                                          DriverDashbboardWidget.routeName);
                                     },
                                     text: 'Done',
                                     options: FFButtonOptions(

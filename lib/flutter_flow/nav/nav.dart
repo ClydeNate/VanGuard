@@ -1,10 +1,19 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
+import 'package:flutter_spinkit/flutter_spinkit.dart';
+import 'package:go_router/go_router.dart';
+import 'package:page_transition/page_transition.dart';
 import 'package:provider/provider.dart';
 
+import '/backend/supabase/supabase.dart';
 
+import '/main.dart';
+import '/flutter_flow/flutter_flow_theme.dart';
+import '/flutter_flow/lat_lng.dart';
+import '/flutter_flow/place.dart';
 import '/flutter_flow/flutter_flow_util.dart';
+import 'serialization_util.dart';
 
 import '/index.dart';
 
@@ -155,6 +164,21 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           name: ApplicationWidget.routeName,
           path: ApplicationWidget.routePath,
           builder: (context, params) => ApplicationWidget(),
+        ),
+        FFRoute(
+          name: PassengerFirstPageWidget.routeName,
+          path: PassengerFirstPageWidget.routePath,
+          builder: (context, params) => PassengerFirstPageWidget(),
+        ),
+        FFRoute(
+          name: PassengerLoginWidget.routeName,
+          path: PassengerLoginWidget.routePath,
+          builder: (context, params) => PassengerLoginWidget(),
+        ),
+        FFRoute(
+          name: PassengerSignUpWidget.routeName,
+          path: PassengerSignUpWidget.routePath,
+          builder: (context, params) => PassengerSignUpWidget(),
         )
       ].map((r) => r.toRoute(appStateNotifier)).toList(),
     );

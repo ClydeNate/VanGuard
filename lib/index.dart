@@ -7,7 +7,8 @@ export '/driver/driver_account/driver_first_page/driver_first_page_widget.dart'
     show DriverFirstPageWidget;
 export '/main_pages/loading_frame/loading_frame_widget.dart'
     show LoadingFrameWidget;
-export '/driver/driver_login/driver_login_widget.dart' show DriverLoginWidget;
+export '/driver/driver_account/driver_login/driver_login_widget.dart'
+    show DriverLoginWidget;
 export '/driver/driver_account/driver_sign_up/driver_sign_up_widget.dart'
     show DriverSignUpWidget;
 export '/main_pages/home_page/home_page_widget.dart' show HomePageWidget;
@@ -23,8 +24,14 @@ export '/passenger/passenger_soon/passenger_soon_widget.dart'
     show PassengerSoonWidget;
 export '/driver/driver_dashboard/driver_prev_records/driver_prev_records_widget.dart'
     show DriverPrevRecordsWidget;
-export '/passenger/about_tab/about/about_widget.dart' show AboutWidget;
-export '/passenger/city_routes_tab/city_routes/city_routes_widget.dart'
+export '/passenger/application_tab/about_tab/about/about_widget.dart'
+    show AboutWidget;
+export '/passenger/application_tab/city_routes_tab/city_routes/city_routes_widget.dart'
     show CityRoutesWidget;
-export '/passenger/application_tab/application/application_widget.dart'
-    show ApplicationWidget;
+export '/passenger/application/application_widget.dart' show ApplicationWidget;
+export '/passenger/passenger_account/passenger_first_page/passenger_first_page_widget.dart'
+    show PassengerFirstPageWidget;
+export '/passenger/passenger_account/passenger_login/passenger_login_widget.dart'
+    show PassengerLoginWidget;
+export '/passenger/passenger_account/passenger_sign_up/passenger_sign_up_widget.dart'
+    show PassengerSignUpWidget;
