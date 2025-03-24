@@ -158,21 +158,14 @@ class _AppScheduleWidgetState extends State<AppScheduleWidget> {
                           children: [
                             Align(
                               alignment: AlignmentDirectional(0.0, 0.0),
-                              child: InkWell(
-                                splashColor: Colors.transparent,
-                                focusColor: Colors.transparent,
-                                hoverColor: Colors.transparent,
-                                highlightColor: Colors.transparent,
-                                onTap: () async {},
-                                child: ClipRRect(
-                                  borderRadius: BorderRadius.circular(8.0),
-                                  child: Image.network(
-                                    'https://i.pinimg.com/736x/9c/07/78/9c0778122e9ea873deca5e20fd27b399.jpg',
-                                    width: 360.0,
-                                    height: 160.0,
-                                    fit: BoxFit.cover,
-                                    alignment: Alignment(0.0, -1.0),
-                                  ),
+                              child: ClipRRect(
+                                borderRadius: BorderRadius.circular(8.0),
+                                child: Image.network(
+                                  'https://i.pinimg.com/736x/9c/07/78/9c0778122e9ea873deca5e20fd27b399.jpg',
+                                  width: 360.0,
+                                  height: 160.0,
+                                  fit: BoxFit.cover,
+                                  alignment: Alignment(0.0, -1.0),
                                 ),
                               ),
                             ),

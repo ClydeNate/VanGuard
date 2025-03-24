@@ -35,3 +35,7 @@ export '/passenger/app_announce/app_announce_widget.dart'
     show AppAnnounceWidget;
 export '/passenger/app_schedule/app_schedule_widget.dart'
     show AppScheduleWidget;
+export '/driver/driver_dashboard/driver_prev_records_example1/driver_prev_records_example1_widget.dart'
+    show DriverPrevRecordsExample1Widget;
+export '/driver/driver_dashboard/driver_prev_records_example2/driver_prev_records_example2_widget.dart'
+    show DriverPrevRecordsExample2Widget;

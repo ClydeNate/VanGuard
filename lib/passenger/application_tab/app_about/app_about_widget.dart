@@ -84,31 +84,6 @@ class _AppAboutWidgetState extends State<AppAboutWidget> {
                     shrinkWrap: true,
                     scrollDirection: Axis.vertical,
                     children: [
-                      Container(
-                        width: 100.0,
-                        height: 130.0,
-                        decoration: BoxDecoration(
-                          color:
-                              FlutterFlowTheme.of(context).secondaryBackground,
-                        ),
-                        child: Stack(
-                          children: [
-                            Align(
-                              alignment: AlignmentDirectional(0.0, 0.0),
-                              child: ClipRRect(
-                                borderRadius: BorderRadius.circular(8.0),
-                                child: Image.network(
-                                  'https://i.pinimg.com/736x/e4/b5/51/e4b55142b1aa46fab472988a537e84d5.jpg',
-                                  width: 360.0,
-                                  height: 180.5,
-                                  fit: BoxFit.fitWidth,
-                                  alignment: Alignment(0.0, 0.0),
-                                ),
-                              ),
-                            ),
-                          ],
-                        ),
-                      ),
                       Align(
                         alignment: AlignmentDirectional(0.0, 0.0),
                         child: Text(
@@ -116,10 +91,139 @@ class _AppAboutWidgetState extends State<AppAboutWidget> {
                           style:
                               FlutterFlowTheme.of(context).bodyMedium.override(
                                     fontFamily: 'Google Sans Family',
-                                    fontSize: 18.0,
+                                    fontSize: 32.0,
                                     letterSpacing: 0.0,
                                     useGoogleFonts: false,
                                   ),
+                        ),
+                      ),
+                      Container(
+                        width: 100.0,
+                        height: 20.0,
+                        decoration: BoxDecoration(
+                          color:
+                              FlutterFlowTheme.of(context).secondaryBackground,
+                        ),
+                      ),
+                      Align(
+                        alignment: AlignmentDirectional(0.0, 0.0),
+                        child: Text(
+                          'This appiication is an Advanced Predictive Model for Van Schedules on the Legazpi City - Sorsogon City Route: Integrating GPS Data with Random Forest and KNN Algorithms Appliication called VanGuard, as a requirement for Thesis Special Problem 1 and 2 this SY 2024-2025',
+                          textAlign: TextAlign.center,
+                          style:
+                              FlutterFlowTheme.of(context).bodyMedium.override(
+                                    fontFamily: 'Google Sans Family',
+                                    fontSize: 16.0,
+                                    letterSpacing: 0.0,
+                                    useGoogleFonts: false,
+                                  ),
+                        ),
+                      ),
+                      Container(
+                        width: 100.0,
+                        height: 20.0,
+                        decoration: BoxDecoration(
+                          color:
+                              FlutterFlowTheme.of(context).secondaryBackground,
+                        ),
+                      ),
+                      Container(
+                        width: 100.0,
+                        height: 100.0,
+                        clipBehavior: Clip.antiAlias,
+                        decoration: BoxDecoration(
+                          shape: BoxShape.circle,
+                        ),
+                        child: Image.network(
+                          'https://picsum.photos/seed/85/600',
+                          fit: BoxFit.cover,
+                        ),
+                      ),
+                      Align(
+                        alignment: AlignmentDirectional(0.0, 0.0),
+                        child: Text(
+                          'Gonzales, Jhielo A.',
+                          style:
+                              FlutterFlowTheme.of(context).bodyMedium.override(
+                                    fontFamily: 'Google Sans Family',
+                                    fontSize: 24.0,
+                                    letterSpacing: 0.0,
+                                    useGoogleFonts: false,
+                                  ),
+                        ),
+                      ),
+                      Container(
+                        width: 100.0,
+                        height: 20.0,
+                        decoration: BoxDecoration(
+                          color:
+                              FlutterFlowTheme.of(context).secondaryBackground,
+                        ),
+                      ),
+                      Container(
+                        width: 100.0,
+                        height: 100.0,
+                        clipBehavior: Clip.antiAlias,
+                        decoration: BoxDecoration(
+                          shape: BoxShape.circle,
+                        ),
+                        child: Image.network(
+                          'https://picsum.photos/seed/593/600',
+                          fit: BoxFit.cover,
+                        ),
+                      ),
+                      Align(
+                        alignment: AlignmentDirectional(0.0, 0.0),
+                        child: Text(
+                          'Nate, Clyde Justine C.',
+                          style:
+                              FlutterFlowTheme.of(context).bodyMedium.override(
+                                    fontFamily: 'Google Sans Family',
+                                    fontSize: 24.0,
+                                    letterSpacing: 0.0,
+                                    useGoogleFonts: false,
+                                  ),
+                        ),
+                      ),
+                      Container(
+                        width: 100.0,
+                        height: 20.0,
+                        decoration: BoxDecoration(
+                          color:
+                              FlutterFlowTheme.of(context).secondaryBackground,
+                        ),
+                      ),
+                      Container(
+                        width: 100.0,
+                        height: 100.0,
+                        clipBehavior: Clip.antiAlias,
+                        decoration: BoxDecoration(
+                          shape: BoxShape.circle,
+                        ),
+                        child: Image.network(
+                          'https://picsum.photos/seed/340/600',
+                          fit: BoxFit.cover,
+                        ),
+                      ),
+                      Align(
+                        alignment: AlignmentDirectional(0.0, 0.0),
+                        child: Text(
+                          'Velasco, Joselito O.',
+                          style:
+                              FlutterFlowTheme.of(context).bodyMedium.override(
+                                    fontFamily: 'Google Sans Family',
+                                    fontSize: 24.0,
+                                    letterSpacing: 0.0,
+                                    useGoogleFonts: false,
+                                  ),
+                        ),
+                      ),
+                      Container(
+                        width: 100.0,
+                        height: 20.0,
+                        decoration: BoxDecoration(
+                          color:
+                              FlutterFlowTheme.of(context).secondaryBackground,
                         ),
                       ),
                     ],

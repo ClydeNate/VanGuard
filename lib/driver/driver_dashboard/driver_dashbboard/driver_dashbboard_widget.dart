@@ -64,7 +64,7 @@ class _DriverDashbboardWidgetState extends State<DriverDashbboardWidget> {
             children: [
               Container(
                 width: 404.0,
-                height: 78.11,
+                height: 45.2,
                 decoration: BoxDecoration(
                   color: FlutterFlowTheme.of(context).secondaryBackground,
                 ),
@@ -72,7 +72,7 @@ class _DriverDashbboardWidgetState extends State<DriverDashbboardWidget> {
               Align(
                 alignment: AlignmentDirectional(0.0, 0.0),
                 child: Text(
-                  'Welcome, User!',
+                  'Welcome, <user>',
                   style: FlutterFlowTheme.of(context).displaySmall.override(
                         fontFamily: 'Google Sans Family',
                         letterSpacing: 0.0,
@@ -94,7 +94,7 @@ class _DriverDashbboardWidgetState extends State<DriverDashbboardWidget> {
                   child: Image.asset(
                     'assets/images/VanGuard_(Phone_Wallpaper)_(2).png',
                     width: 200.0,
-                    height: 200.0,
+                    height: 216.11,
                     fit: BoxFit.cover,
                   ),
                 ),
@@ -122,7 +122,7 @@ class _DriverDashbboardWidgetState extends State<DriverDashbboardWidget> {
                           },
                           text: 'Record New Data',
                           options: FFButtonOptions(
-                            width: 32.33,
+                            width: 32.3,
                             height: 80.0,
                             padding: EdgeInsetsDirectional.fromSTEB(
                                 0.0, 0.0, 0.0, 0.0),
@@ -163,13 +163,47 @@ class _DriverDashbboardWidgetState extends State<DriverDashbboardWidget> {
                                 0.0, 0.0, 0.0, 0.0),
                             iconPadding: EdgeInsetsDirectional.fromSTEB(
                                 0.0, 0.0, 0.0, 0.0),
-                            color: Color(0xFF0D193B),
+                            color: FlutterFlowTheme.of(context).primary,
                             textStyle: FlutterFlowTheme.of(context)
                                 .titleSmall
                                 .override(
                                   fontFamily: 'Google Sans Family',
-                                  color: FlutterFlowTheme.of(context)
-                                      .secondaryText,
+                                  color:
+                                      FlutterFlowTheme.of(context).primaryText,
+                                  fontSize: 24.0,
+                                  letterSpacing: 0.0,
+                                  useGoogleFonts: false,
+                                ),
+                            elevation: 0.0,
+                            borderRadius: BorderRadius.circular(8.0),
+                          ),
+                        ),
+                        Container(
+                          width: 100.0,
+                          height: 22.2,
+                          decoration: BoxDecoration(
+                            color: FlutterFlowTheme.of(context)
+                                .secondaryBackground,
+                          ),
+                        ),
+                        FFButtonWidget(
+                          onPressed: () async {
+                            context.pushNamed(HomePageWidget.routeName);
+                          },
+                          text: 'Exit Application',
+                          options: FFButtonOptions(
+                            width: 32.3,
+                            height: 86.21,
+                            padding: EdgeInsetsDirectional.fromSTEB(
+                                0.0, 0.0, 0.0, 0.0),
+                            iconPadding: EdgeInsetsDirectional.fromSTEB(
+                                0.0, 0.0, 0.0, 0.0),
+                            color: FlutterFlowTheme.of(context).primary,
+                            textStyle: FlutterFlowTheme.of(context)
+                                .titleSmall
+                                .override(
+                                  fontFamily: 'Google Sans Family',
+                                  color: Colors.white,
                                   fontSize: 24.0,
                                   letterSpacing: 0.0,
                                   useGoogleFonts: false,

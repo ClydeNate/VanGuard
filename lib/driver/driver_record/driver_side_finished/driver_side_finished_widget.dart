@@ -2,6 +2,7 @@ import '/flutter_flow/flutter_flow_google_map.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
+import '/custom_code/actions/index.dart' as actions;
 import '/index.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
@@ -261,6 +262,17 @@ class _DriverSideFinishedWidgetState extends State<DriverSideFinishedWidget> {
                 child: FFButtonWidget(
                   onPressed: () async {
                     context.pushNamed(DriverSideRecordWidget.routeName);
+
+                    await actions.startNewRecording(
+                      false,
+                      false,
+                      '',
+                      getCurrentRouteStack(context)
+                          .contains(widget!.city?.toString())
+                          .toString(),
+                      getCurrentTimestamp,
+                      getCurrentTimestamp,
+                    );
                   },
                   text: 'Record New Entry',
                   options: FFButtonOptions(

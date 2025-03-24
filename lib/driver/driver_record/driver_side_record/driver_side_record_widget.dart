@@ -2,7 +2,7 @@ import '/flutter_flow/flutter_flow_google_map.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
-import '/index.dart';
+import '/custom_code/actions/index.dart' as actions;
 import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -138,7 +138,14 @@ class _DriverSideRecordWidgetState extends State<DriverSideRecordWidget> {
                 alignment: AlignmentDirectional(-0.02, 0.93),
                 child: FFButtonWidget(
                   onPressed: () async {
-                    context.pushNamed(DriverSideStopWidget.routeName);
+                    await actions.startGpsRecording(
+                      false,
+                      false,
+                      '',
+                      getCurrentRouteStack(context).toList(),
+                      getCurrentTimestamp,
+                      getCurrentTimestamp,
+                    );
                   },
                   text: 'Record',
                   options: FFButtonOptions(

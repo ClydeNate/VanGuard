@@ -179,6 +179,16 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           name: AppScheduleWidget.routeName,
           path: AppScheduleWidget.routePath,
           builder: (context, params) => AppScheduleWidget(),
+        ),
+        FFRoute(
+          name: DriverPrevRecordsExample1Widget.routeName,
+          path: DriverPrevRecordsExample1Widget.routePath,
+          builder: (context, params) => DriverPrevRecordsExample1Widget(),
+        ),
+        FFRoute(
+          name: DriverPrevRecordsExample2Widget.routeName,
+          path: DriverPrevRecordsExample2Widget.routePath,
+          builder: (context, params) => DriverPrevRecordsExample2Widget(),
         )
       ].map((r) => r.toRoute(appStateNotifier)).toList(),
     );

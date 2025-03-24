@@ -7,30 +7,31 @@ import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
-import 'driver_prev_records_model.dart';
-export 'driver_prev_records_model.dart';
+import 'driver_prev_records_example2_model.dart';
+export 'driver_prev_records_example2_model.dart';
 
 /// Resize the components and make it even
-class DriverPrevRecordsWidget extends StatefulWidget {
-  const DriverPrevRecordsWidget({super.key});
+class DriverPrevRecordsExample2Widget extends StatefulWidget {
+  const DriverPrevRecordsExample2Widget({super.key});
 
-  static String routeName = 'DriverPrevRecords';
-  static String routePath = '/driverPrevRecords';
+  static String routeName = 'DriverPrevRecordsExample2';
+  static String routePath = '/driverPrevRecordsExample2';
 
   @override
-  State<DriverPrevRecordsWidget> createState() =>
-      _DriverPrevRecordsWidgetState();
+  State<DriverPrevRecordsExample2Widget> createState() =>
+      _DriverPrevRecordsExample2WidgetState();
 }
 
-class _DriverPrevRecordsWidgetState extends State<DriverPrevRecordsWidget> {
-  late DriverPrevRecordsModel _model;
+class _DriverPrevRecordsExample2WidgetState
+    extends State<DriverPrevRecordsExample2Widget> {
+  late DriverPrevRecordsExample2Model _model;
 
   final scaffoldKey = GlobalKey<ScaffoldState>();
 
   @override
   void initState() {
     super.initState();
-    _model = createModel(context, () => DriverPrevRecordsModel());
+    _model = createModel(context, () => DriverPrevRecordsExample2Model());
 
     _model.textController ??= TextEditingController();
     _model.textFieldFocusNode ??= FocusNode();
@@ -56,20 +57,6 @@ class _DriverPrevRecordsWidgetState extends State<DriverPrevRecordsWidget> {
         appBar: AppBar(
           backgroundColor: FlutterFlowTheme.of(context).primary,
           automaticallyImplyLeading: false,
-          leading: InkWell(
-            splashColor: Colors.transparent,
-            focusColor: Colors.transparent,
-            hoverColor: Colors.transparent,
-            highlightColor: Colors.transparent,
-            onTap: () async {
-              context.safePop();
-            },
-            child: Icon(
-              Icons.arrow_back,
-              color: FlutterFlowTheme.of(context).primaryText,
-              size: 24.0,
-            ),
-          ),
           actions: [],
           centerTitle: false,
           elevation: 2.0,
@@ -167,56 +154,13 @@ class _DriverPrevRecordsWidgetState extends State<DriverPrevRecordsWidget> {
                       shrinkWrap: true,
                       scrollDirection: Axis.vertical,
                       children: [
-                        Container(
-                          width: 100.0,
-                          height: 22.2,
-                          decoration: BoxDecoration(
-                            color: FlutterFlowTheme.of(context)
-                                .secondaryBackground,
-                          ),
-                        ),
                         FFButtonWidget(
-                          onPressed: () async {
-                            context.pushNamed(
-                                DriverPrevRecordsExample1Widget.routeName);
-                          },
-                          text: 'Record #1',
-                          options: FFButtonOptions(
-                            height: 120.0,
-                            padding: EdgeInsetsDirectional.fromSTEB(
-                                0.0, 0.0, 0.0, 0.0),
-                            iconPadding: EdgeInsetsDirectional.fromSTEB(
-                                0.0, 0.0, 0.0, 0.0),
-                            color: FlutterFlowTheme.of(context).primary,
-                            textStyle: FlutterFlowTheme.of(context)
-                                .titleSmall
-                                .override(
-                                  fontFamily: 'Google Sans Family',
-                                  color: Colors.white,
-                                  fontSize: 24.0,
-                                  letterSpacing: 0.0,
-                                  useGoogleFonts: false,
-                                ),
-                            elevation: 0.0,
-                            borderRadius: BorderRadius.circular(8.0),
-                          ),
-                        ),
-                        Container(
-                          width: 100.0,
-                          height: 22.2,
-                          decoration: BoxDecoration(
-                            color: FlutterFlowTheme.of(context)
-                                .secondaryBackground,
-                          ),
-                        ),
-                        FFButtonWidget(
-                          onPressed: () async {
-                            context.pushNamed(
-                                DriverPrevRecordsExample2Widget.routeName);
+                          onPressed: () {
+                            print('Button pressed ...');
                           },
                           text: 'Record #2',
                           options: FFButtonOptions(
-                            height: 120.0,
+                            height: 493.43,
                             padding: EdgeInsetsDirectional.fromSTEB(
                                 0.0, 0.0, 0.0, 0.0),
                             iconPadding: EdgeInsetsDirectional.fromSTEB(
@@ -236,6 +180,40 @@ class _DriverPrevRecordsWidgetState extends State<DriverPrevRecordsWidget> {
                           ),
                         ),
                       ],
+                    ),
+                  ),
+                ),
+              ),
+              Align(
+                alignment: AlignmentDirectional(0.12, 0.84),
+                child: Padding(
+                  padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 16.0),
+                  child: FFButtonWidget(
+                    onPressed: () async {
+                      context.pushNamed(DriverPrevRecordsWidget.routeName);
+                    },
+                    text: 'Return',
+                    options: FFButtonOptions(
+                      width: 370.0,
+                      height: 44.0,
+                      padding:
+                          EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                      iconPadding:
+                          EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                      color: FlutterFlowTheme.of(context).primary,
+                      textStyle:
+                          FlutterFlowTheme.of(context).titleSmall.override(
+                                fontFamily: 'Google Sans Family',
+                                color: Colors.white,
+                                letterSpacing: 0.0,
+                                useGoogleFonts: false,
+                              ),
+                      elevation: 3.0,
+                      borderSide: BorderSide(
+                        color: Colors.transparent,
+                        width: 1.0,
+                      ),
+                      borderRadius: BorderRadius.circular(12.0),
                     ),
                   ),
                 ),

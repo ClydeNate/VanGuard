@@ -2,7 +2,7 @@ import '/flutter_flow/flutter_flow_google_map.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
-import '/index.dart';
+import '/custom_code/actions/index.dart' as actions;
 import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -213,7 +213,11 @@ class _DriverSideStopWidgetState extends State<DriverSideStopWidget> {
                 alignment: AlignmentDirectional(0.07, 0.94),
                 child: FFButtonWidget(
                   onPressed: () async {
-                    context.pushNamed(DriverSideFinishedWidget.routeName);
+                    await actions.stopGPSRecording(
+                      '',
+                      getCurrentRouteStack(context).toList(),
+                      getCurrentTimestamp,
+                    );
                   },
                   text: 'Stop',
                   options: FFButtonOptions(
@@ -238,8 +242,15 @@ class _DriverSideStopWidgetState extends State<DriverSideStopWidget> {
               Align(
                 alignment: AlignmentDirectional(0.06, 0.8),
                 child: FFButtonWidget(
-                  onPressed: () {
-                    print('Button pressed ...');
+                  onPressed: () async {
+                    await actions.pauseGPSRecording(
+                      false,
+                      false,
+                      '',
+                      getCurrentRoute(context),
+                      getCurrentTimestamp,
+                      getCurrentTimestamp,
+                    );
                   },
                   text: 'Pause',
                   options: FFButtonOptions(
