@@ -22,7 +22,11 @@ Future<String> pauseGPSRecording(
       return 'GPS recording is already paused.';
     }
 
-    final supabase = Supabase.instance.client; // Fix here
+    if (currentSessionID == null || currentSessionID.isEmpty) {
+      return 'Error: Session ID is missing.';
+    }
+
+    final supabase = Supabase.instance.client;
 
     await supabase
         .from('gps_sessions')
