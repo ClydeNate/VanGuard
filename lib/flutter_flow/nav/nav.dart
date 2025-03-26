@@ -71,9 +71,9 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
               : LoadingFrameWidget(),
         ),
         FFRoute(
-          name: PassengerSideWidget.routeName,
-          path: PassengerSideWidget.routePath,
-          builder: (context, params) => PassengerSideWidget(),
+          name: PassengerSideUnusedWidget.routeName,
+          path: PassengerSideUnusedWidget.routePath,
+          builder: (context, params) => PassengerSideUnusedWidget(),
         ),
         FFRoute(
           name: DriverFirstPageWidget.routeName,
@@ -151,11 +151,6 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           builder: (context, params) => AppCityRoutesWidget(),
         ),
         FFRoute(
-          name: ApplicationWidget.routeName,
-          path: ApplicationWidget.routePath,
-          builder: (context, params) => ApplicationWidget(),
-        ),
-        FFRoute(
           name: PassengerFirstPageWidget.routeName,
           path: PassengerFirstPageWidget.routePath,
           builder: (context, params) => PassengerFirstPageWidget(),
@@ -171,24 +166,74 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           builder: (context, params) => PassengerSignUpWidget(),
         ),
         FFRoute(
+          name: PassengerDashboardWidget.routeName,
+          path: PassengerDashboardWidget.routePath,
+          builder: (context, params) => PassengerDashboardWidget(),
+        ),
+        FFRoute(
+          name: DriverPrevRecordsExWidget.routeName,
+          path: DriverPrevRecordsExWidget.routePath,
+          builder: (context, params) => DriverPrevRecordsExWidget(),
+        ),
+        FFRoute(
+          name: DriverEditProfileWidget.routeName,
+          path: DriverEditProfileWidget.routePath,
+          builder: (context, params) => DriverEditProfileWidget(),
+        ),
+        FFRoute(
+          name: AppAboutGonzalesWidget.routeName,
+          path: AppAboutGonzalesWidget.routePath,
+          builder: (context, params) => AppAboutGonzalesWidget(),
+        ),
+        FFRoute(
+          name: AppAboutNateWidget.routeName,
+          path: AppAboutNateWidget.routePath,
+          builder: (context, params) => AppAboutNateWidget(),
+        ),
+        FFRoute(
+          name: AppAboutVelascoWidget.routeName,
+          path: AppAboutVelascoWidget.routePath,
+          builder: (context, params) => AppAboutVelascoWidget(),
+        ),
+        FFRoute(
+          name: AppSettingsWidget.routeName,
+          path: AppSettingsWidget.routePath,
+          builder: (context, params) => AppSettingsWidget(),
+        ),
+        FFRoute(
+          name: AppEditProfileWidget.routeName,
+          path: AppEditProfileWidget.routePath,
+          builder: (context, params) => AppEditProfileWidget(),
+        ),
+        FFRoute(
+          name: AppSchedulesWidget.routeName,
+          path: AppSchedulesWidget.routePath,
+          builder: (context, params) => AppSchedulesWidget(),
+        ),
+        FFRoute(
+          name: AppAddedSchedulesWidget.routeName,
+          path: AppAddedSchedulesWidget.routePath,
+          builder: (context, params) => AppAddedSchedulesWidget(),
+        ),
+        FFRoute(
+          name: AppAddedSchedulesExWidget.routeName,
+          path: AppAddedSchedulesExWidget.routePath,
+          builder: (context, params) => AppAddedSchedulesExWidget(),
+        ),
+        FFRoute(
+          name: AppAnnouncePrioWidget.routeName,
+          path: AppAnnouncePrioWidget.routePath,
+          builder: (context, params) => AppAnnouncePrioWidget(),
+        ),
+        FFRoute(
           name: AppAnnounceWidget.routeName,
           path: AppAnnounceWidget.routePath,
           builder: (context, params) => AppAnnounceWidget(),
         ),
         FFRoute(
-          name: AppScheduleWidget.routeName,
-          path: AppScheduleWidget.routePath,
-          builder: (context, params) => AppScheduleWidget(),
-        ),
-        FFRoute(
-          name: DriverPrevRecordsExample1Widget.routeName,
-          path: DriverPrevRecordsExample1Widget.routePath,
-          builder: (context, params) => DriverPrevRecordsExample1Widget(),
-        ),
-        FFRoute(
-          name: DriverPrevRecordsExample2Widget.routeName,
-          path: DriverPrevRecordsExample2Widget.routePath,
-          builder: (context, params) => DriverPrevRecordsExample2Widget(),
+          name: AppAnnounceNonPrioWidget.routeName,
+          path: AppAnnounceNonPrioWidget.routePath,
+          builder: (context, params) => AppAnnounceNonPrioWidget(),
         )
       ].map((r) => r.toRoute(appStateNotifier)).toList(),
     );

@@ -37,4 +37,19 @@ class DriversRow extends SupabaseDataRow {
 
   String get route => getField<String>('route')!;
   set route(String value) => setField<String>('route', value);
+
+  String get status => getField<String>('status')!;
+  set status(String value) => setField<String>('status', value);
+
+  DateTime? get lastUpdated => getField<DateTime>('last_updated');
+  set lastUpdated(DateTime? value) => setField<DateTime>('last_updated', value);
+
+  String? get photoUrl => getField<String>('photo_url');
+  set photoUrl(String? value) => setField<String>('photo_url', value);
+
+  double? get rating => getField<double>('rating');
+  set rating(double? value) => setField<double>('rating', value);
+
+  String get vehicleType => getField<String>('vehicle_type')!;
+  set vehicleType(String value) => setField<String>('vehicle_type', value);
 }

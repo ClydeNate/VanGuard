@@ -40,6 +40,10 @@ class _DriverLoginWidgetState extends State<DriverLoginWidget> {
 
     _model.passwordTextController ??= TextEditingController();
     _model.passwordFocusNode ??= FocusNode();
+
+    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {
+          _model.plateNumberTextController?.text = 'LLL-DDDD';
+        }));
   }
 
   @override
@@ -62,18 +66,16 @@ class _DriverLoginWidgetState extends State<DriverLoginWidget> {
         appBar: AppBar(
           backgroundColor: FlutterFlowTheme.of(context).primary,
           automaticallyImplyLeading: false,
-          leading: InkWell(
-            splashColor: Colors.transparent,
-            focusColor: Colors.transparent,
-            hoverColor: Colors.transparent,
-            highlightColor: Colors.transparent,
-            onTap: () async {
-              context.safePop();
-            },
-            child: Icon(
-              Icons.arrow_back,
-              color: FlutterFlowTheme.of(context).primaryText,
-              size: 24.0,
+          title: Align(
+            alignment: AlignmentDirectional(0.0, 0.0),
+            child: Text(
+              'Login',
+              style: FlutterFlowTheme.of(context).titleMedium.override(
+                    fontFamily: 'Google Sans Family',
+                    fontSize: 24.0,
+                    letterSpacing: 0.0,
+                    useGoogleFonts: false,
+                  ),
             ),
           ),
           actions: [],
@@ -93,40 +95,12 @@ class _DriverLoginWidgetState extends State<DriverLoginWidget> {
                   decoration: BoxDecoration(
                     color: FlutterFlowTheme.of(context).secondaryBackground,
                   ),
-                  alignment: AlignmentDirectional(0.0, -1.0),
+                  alignment: AlignmentDirectional(0.0, 0.0),
                   child: SingleChildScrollView(
                     child: Column(
                       mainAxisSize: MainAxisSize.max,
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-                        Container(
-                          width: double.infinity,
-                          height: 140.0,
-                          decoration: BoxDecoration(
-                            color: FlutterFlowTheme.of(context)
-                                .secondaryBackground,
-                            borderRadius: BorderRadius.only(
-                              bottomLeft: Radius.circular(16.0),
-                              bottomRight: Radius.circular(16.0),
-                              topLeft: Radius.circular(0.0),
-                              topRight: Radius.circular(0.0),
-                            ),
-                          ),
-                          alignment: AlignmentDirectional(-1.0, 0.0),
-                          child: Align(
-                            alignment: AlignmentDirectional(0.0, 0.0),
-                            child: Text(
-                              'VanGuard',
-                              style: FlutterFlowTheme.of(context)
-                                  .displaySmall
-                                  .override(
-                                    fontFamily: 'Google Sans Family',
-                                    letterSpacing: 0.0,
-                                    useGoogleFonts: false,
-                                  ),
-                            ),
-                          ),
-                        ),
                         Align(
                           alignment: AlignmentDirectional(0.0, 0.0),
                           child: Text(
@@ -331,8 +305,9 @@ class _DriverLoginWidgetState extends State<DriverLoginWidget> {
                                         labelStyle: FlutterFlowTheme.of(context)
                                             .labelMedium
                                             .override(
-                                              fontFamily: 'Inter',
+                                              fontFamily: 'Google Sans Family',
                                               letterSpacing: 0.0,
+                                              useGoogleFonts: false,
                                             ),
                                         enabledBorder: OutlineInputBorder(
                                           borderSide: BorderSide(
@@ -392,8 +367,9 @@ class _DriverLoginWidgetState extends State<DriverLoginWidget> {
                                       style: FlutterFlowTheme.of(context)
                                           .bodyMedium
                                           .override(
-                                            fontFamily: 'Inter',
+                                            fontFamily: 'Google Sans Family',
                                             letterSpacing: 0.0,
+                                            useGoogleFonts: false,
                                           ),
                                       keyboardType: TextInputType.emailAddress,
                                       validator: _model

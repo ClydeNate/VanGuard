@@ -181,107 +181,107 @@ class ThemeTypography extends Typography {
 
   final FlutterFlowTheme theme;
 
-  String get displayLargeFamily => 'Inter Tight';
-  TextStyle get displayLarge => GoogleFonts.getFont(
-        'Inter Tight',
+  String get displayLargeFamily => 'Google Sans Family';
+  TextStyle get displayLarge => TextStyle(
+        fontFamily: 'Google Sans Family',
         color: theme.primaryText,
         fontWeight: FontWeight.w600,
         fontSize: 64.0,
       );
-  String get displayMediumFamily => 'Inter Tight';
-  TextStyle get displayMedium => GoogleFonts.getFont(
-        'Inter Tight',
+  String get displayMediumFamily => 'Google Sans Family';
+  TextStyle get displayMedium => TextStyle(
+        fontFamily: 'Google Sans Family',
         color: theme.primaryText,
         fontWeight: FontWeight.w600,
         fontSize: 44.0,
       );
-  String get displaySmallFamily => 'Inter Tight';
-  TextStyle get displaySmall => GoogleFonts.getFont(
-        'Inter Tight',
+  String get displaySmallFamily => 'Google Sans Family';
+  TextStyle get displaySmall => TextStyle(
+        fontFamily: 'Google Sans Family',
         color: theme.primaryText,
         fontWeight: FontWeight.w600,
         fontSize: 36.0,
       );
-  String get headlineLargeFamily => 'Inter Tight';
-  TextStyle get headlineLarge => GoogleFonts.getFont(
-        'Inter Tight',
+  String get headlineLargeFamily => 'Google Sans Family';
+  TextStyle get headlineLarge => TextStyle(
+        fontFamily: 'Google Sans Family',
         color: theme.primaryText,
         fontWeight: FontWeight.w600,
         fontSize: 32.0,
       );
-  String get headlineMediumFamily => 'Inter Tight';
-  TextStyle get headlineMedium => GoogleFonts.getFont(
-        'Inter Tight',
+  String get headlineMediumFamily => 'Google Sans Family';
+  TextStyle get headlineMedium => TextStyle(
+        fontFamily: 'Google Sans Family',
         color: theme.primaryText,
         fontWeight: FontWeight.w600,
         fontSize: 28.0,
       );
-  String get headlineSmallFamily => 'Inter Tight';
-  TextStyle get headlineSmall => GoogleFonts.getFont(
-        'Inter Tight',
+  String get headlineSmallFamily => 'Google Sans Family';
+  TextStyle get headlineSmall => TextStyle(
+        fontFamily: 'Google Sans Family',
         color: theme.primaryText,
         fontWeight: FontWeight.w600,
         fontSize: 24.0,
       );
-  String get titleLargeFamily => 'Inter Tight';
-  TextStyle get titleLarge => GoogleFonts.getFont(
-        'Inter Tight',
+  String get titleLargeFamily => 'Google Sans Family';
+  TextStyle get titleLarge => TextStyle(
+        fontFamily: 'Google Sans Family',
         color: theme.primaryText,
         fontWeight: FontWeight.w600,
         fontSize: 20.0,
       );
-  String get titleMediumFamily => 'Inter Tight';
-  TextStyle get titleMedium => GoogleFonts.getFont(
-        'Inter Tight',
+  String get titleMediumFamily => 'Google Sans Family';
+  TextStyle get titleMedium => TextStyle(
+        fontFamily: 'Google Sans Family',
         color: theme.primaryText,
         fontWeight: FontWeight.w600,
         fontSize: 18.0,
       );
-  String get titleSmallFamily => 'Inter Tight';
-  TextStyle get titleSmall => GoogleFonts.getFont(
-        'Inter Tight',
+  String get titleSmallFamily => 'Google Sans Family';
+  TextStyle get titleSmall => TextStyle(
+        fontFamily: 'Google Sans Family',
         color: theme.primaryText,
         fontWeight: FontWeight.w600,
         fontSize: 16.0,
       );
-  String get labelLargeFamily => 'Inter';
-  TextStyle get labelLarge => GoogleFonts.getFont(
-        'Inter',
+  String get labelLargeFamily => 'Google Sans Family';
+  TextStyle get labelLarge => TextStyle(
+        fontFamily: 'Google Sans Family',
         color: theme.secondaryText,
         fontWeight: FontWeight.normal,
         fontSize: 16.0,
       );
-  String get labelMediumFamily => 'Inter';
-  TextStyle get labelMedium => GoogleFonts.getFont(
-        'Inter',
+  String get labelMediumFamily => 'Google Sans Family';
+  TextStyle get labelMedium => TextStyle(
+        fontFamily: 'Google Sans Family',
         color: theme.secondaryText,
         fontWeight: FontWeight.normal,
         fontSize: 14.0,
       );
-  String get labelSmallFamily => 'Inter';
-  TextStyle get labelSmall => GoogleFonts.getFont(
-        'Inter',
+  String get labelSmallFamily => 'Google Sans Family';
+  TextStyle get labelSmall => TextStyle(
+        fontFamily: 'Google Sans Family',
         color: theme.secondaryText,
         fontWeight: FontWeight.normal,
         fontSize: 12.0,
       );
-  String get bodyLargeFamily => 'Inter';
-  TextStyle get bodyLarge => GoogleFonts.getFont(
-        'Inter',
+  String get bodyLargeFamily => 'Google Sans Family';
+  TextStyle get bodyLarge => TextStyle(
+        fontFamily: 'Google Sans Family',
         color: theme.primaryText,
         fontWeight: FontWeight.normal,
         fontSize: 16.0,
       );
-  String get bodyMediumFamily => 'Inter';
-  TextStyle get bodyMedium => GoogleFonts.getFont(
-        'Inter',
+  String get bodyMediumFamily => 'Google Sans Family';
+  TextStyle get bodyMedium => TextStyle(
+        fontFamily: 'Google Sans Family',
         color: theme.primaryText,
         fontWeight: FontWeight.normal,
         fontSize: 14.0,
       );
-  String get bodySmallFamily => 'Inter';
-  TextStyle get bodySmall => GoogleFonts.getFont(
-        'Inter',
+  String get bodySmallFamily => 'Google Sans Family';
+  TextStyle get bodySmall => TextStyle(
+        fontFamily: 'Google Sans Family',
         color: theme.primaryText,
         fontWeight: FontWeight.normal,
         fontSize: 12.0,

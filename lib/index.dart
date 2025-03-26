@@ -1,6 +1,6 @@
 // Export pages
-export '/passenger/passenger_side/passenger_side_widget.dart'
-    show PassengerSideWidget;
+export '/passenger/passenger_side_unused/passenger_side_unused_widget.dart'
+    show PassengerSideUnusedWidget;
 export '/driver/driver_account/driver_first_page/driver_first_page_widget.dart'
     show DriverFirstPageWidget;
 export '/main_pages/loading_frame/loading_frame_widget.dart'
@@ -20,22 +20,41 @@ export '/driver/driver_dashboard/driver_dashbboard/driver_dashbboard_widget.dart
     show DriverDashbboardWidget;
 export '/driver/driver_dashboard/driver_prev_records/driver_prev_records_widget.dart'
     show DriverPrevRecordsWidget;
-export '/passenger/application_tab/app_about/app_about_widget.dart'
+export '/passenger/application_tab/about_tab/app_about/app_about_widget.dart'
     show AppAboutWidget;
 export '/passenger/application_tab/city_routes_tab/app_city_routes/app_city_routes_widget.dart'
     show AppCityRoutesWidget;
-export '/passenger/application/application_widget.dart' show ApplicationWidget;
 export '/passenger/passenger_account/passenger_first_page/passenger_first_page_widget.dart'
     show PassengerFirstPageWidget;
 export '/passenger/passenger_account/passenger_login/passenger_login_widget.dart'
     show PassengerLoginWidget;
 export '/passenger/passenger_account/passenger_sign_up/passenger_sign_up_widget.dart'
     show PassengerSignUpWidget;
-export '/passenger/app_announce/app_announce_widget.dart'
+export '/passenger/passenger_dashboard/passenger_dashboard_widget.dart'
+    show PassengerDashboardWidget;
+export '/driver/driver_dashboard/driver_prev_records_ex/driver_prev_records_ex_widget.dart'
+    show DriverPrevRecordsExWidget;
+export '/driver/driver_dashboard/driver_edit_profile/driver_edit_profile_widget.dart'
+    show DriverEditProfileWidget;
+export '/passenger/application_tab/about_tab/app_about_gonzales/app_about_gonzales_widget.dart'
+    show AppAboutGonzalesWidget;
+export '/passenger/application_tab/about_tab/app_about_nate/app_about_nate_widget.dart'
+    show AppAboutNateWidget;
+export '/passenger/application_tab/about_tab/app_about_velasco/app_about_velasco_widget.dart'
+    show AppAboutVelascoWidget;
+export '/passenger/settings_tab/app_settings/app_settings_widget.dart'
+    show AppSettingsWidget;
+export '/passenger/settings_tab/app_edit_profile/app_edit_profile_widget.dart'
+    show AppEditProfileWidget;
+export '/passenger/application_tab/schedule_tab/app_schedules/app_schedules_widget.dart'
+    show AppSchedulesWidget;
+export '/passenger/application_tab/schedule_tab/app_added_schedules/app_added_schedules_widget.dart'
+    show AppAddedSchedulesWidget;
+export '/passenger/application_tab/schedule_tab/app_added_schedules_ex/app_added_schedules_ex_widget.dart'
+    show AppAddedSchedulesExWidget;
+export '/passenger/application_tab/announce_tab/app_announce_prio/app_announce_prio_widget.dart'
+    show AppAnnouncePrioWidget;
+export '/passenger/application_tab/announce_tab/app_announce/app_announce_widget.dart'
     show AppAnnounceWidget;
-export '/passenger/app_schedule/app_schedule_widget.dart'
-    show AppScheduleWidget;
-export '/driver/driver_dashboard/driver_prev_records_example1/driver_prev_records_example1_widget.dart'
-    show DriverPrevRecordsExample1Widget;
-export '/driver/driver_dashboard/driver_prev_records_example2/driver_prev_records_example2_widget.dart'
-    show DriverPrevRecordsExample2Widget;
+export '/passenger/application_tab/announce_tab/app_announce_non_prio/app_announce_non_prio_widget.dart'
+    show AppAnnounceNonPrioWidget;

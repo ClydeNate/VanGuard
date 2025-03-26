@@ -54,6 +54,18 @@ class _PassengerFirstPageWidgetState extends State<PassengerFirstPageWidget> {
         appBar: AppBar(
           backgroundColor: FlutterFlowTheme.of(context).primary,
           automaticallyImplyLeading: false,
+          title: Align(
+            alignment: AlignmentDirectional(0.0, 0.0),
+            child: Text(
+              'VanGuard',
+              style: FlutterFlowTheme.of(context).titleMedium.override(
+                    fontFamily: 'Google Sans Family',
+                    fontSize: 30.0,
+                    letterSpacing: 0.0,
+                    useGoogleFonts: false,
+                  ),
+            ),
+          ),
           actions: [],
           centerTitle: false,
           elevation: 2.0,
@@ -74,29 +86,17 @@ class _PassengerFirstPageWidgetState extends State<PassengerFirstPageWidget> {
                   alignment: AlignmentDirectional(0.0, -1.0),
                   child: Stack(
                     children: [
-                      SingleChildScrollView(
-                        child: Column(
-                          mainAxisSize: MainAxisSize.max,
-                          mainAxisAlignment: MainAxisAlignment.end,
-                          children: [
-                            Container(
-                              width: double.infinity,
-                              height: 140.0,
-                              decoration: BoxDecoration(
-                                color: FlutterFlowTheme.of(context)
-                                    .secondaryBackground,
-                                borderRadius: BorderRadius.only(
-                                  bottomLeft: Radius.circular(16.0),
-                                  bottomRight: Radius.circular(16.0),
-                                  topLeft: Radius.circular(0.0),
-                                  topRight: Radius.circular(0.0),
-                                ),
-                              ),
-                              alignment: AlignmentDirectional(-1.0, 0.0),
-                              child: Align(
+                      Align(
+                        alignment: AlignmentDirectional(0.0, 0.0),
+                        child: SingleChildScrollView(
+                          child: Column(
+                            mainAxisSize: MainAxisSize.max,
+                            mainAxisAlignment: MainAxisAlignment.end,
+                            children: [
+                              Align(
                                 alignment: AlignmentDirectional(0.0, 0.0),
                                 child: Text(
-                                  'VanGuard',
+                                  'Account Information',
                                   style: FlutterFlowTheme.of(context)
                                       .displaySmall
                                       .override(
@@ -106,94 +106,45 @@ class _PassengerFirstPageWidgetState extends State<PassengerFirstPageWidget> {
                                       ),
                                 ),
                               ),
-                            ),
-                            Align(
-                              alignment: AlignmentDirectional(0.0, 0.0),
-                              child: Text(
-                                'Account Information',
-                                style: FlutterFlowTheme.of(context)
-                                    .displaySmall
-                                    .override(
-                                      fontFamily: 'Google Sans Family',
-                                      letterSpacing: 0.0,
-                                      useGoogleFonts: false,
-                                    ),
-                              ),
-                            ),
-                            Align(
-                              alignment: AlignmentDirectional(0.0, 0.0),
-                              child: Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
-                                    0.0, 12.0, 0.0, 24.0),
-                                child: Text(
-                                  'Are you entering a new or an existing account?',
-                                  style: FlutterFlowTheme.of(context)
-                                      .labelMedium
-                                      .override(
-                                        fontFamily: 'Google Sans Family',
-                                        letterSpacing: 0.0,
-                                        useGoogleFonts: false,
-                                      ),
+                              Align(
+                                alignment: AlignmentDirectional(0.0, 0.0),
+                                child: Padding(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                      0.0, 12.0, 0.0, 24.0),
+                                  child: Text(
+                                    'Are you entering a new or an existing account?',
+                                    style: FlutterFlowTheme.of(context)
+                                        .labelMedium
+                                        .override(
+                                          fontFamily: 'Google Sans Family',
+                                          letterSpacing: 0.0,
+                                          useGoogleFonts: false,
+                                        ),
+                                  ),
                                 ),
                               ),
-                            ),
-                            Align(
-                              alignment: AlignmentDirectional(0.0, 0.0),
-                              child: Padding(
-                                padding: EdgeInsets.all(24.0),
-                                child: Column(
-                                  mainAxisSize: MainAxisSize.max,
-                                  mainAxisAlignment: MainAxisAlignment.center,
-                                  crossAxisAlignment: CrossAxisAlignment.center,
-                                  children: [
-                                    FFButtonWidget(
-                                      onPressed: () async {
-                                        context.pushNamed(
-                                            PassengerSignUpWidget.routeName);
-                                      },
-                                      text: 'New Passenger',
-                                      options: FFButtonOptions(
-                                        width: 370.0,
-                                        height: 40.0,
-                                        padding: EdgeInsetsDirectional.fromSTEB(
-                                            16.0, 0.0, 16.0, 0.0),
-                                        iconPadding:
-                                            EdgeInsetsDirectional.fromSTEB(
-                                                0.0, 0.0, 0.0, 0.0),
-                                        color: FlutterFlowTheme.of(context)
-                                            .primary,
-                                        textStyle: FlutterFlowTheme.of(context)
-                                            .titleSmall
-                                            .override(
-                                              fontFamily: 'Google Sans Family',
-                                              color: Colors.white,
-                                              letterSpacing: 0.0,
-                                              useGoogleFonts: false,
-                                            ),
-                                        elevation: 0.0,
-                                        borderRadius:
-                                            BorderRadius.circular(8.0),
-                                      ),
-                                    ),
-                                    Divider(
-                                      thickness: 2.0,
-                                      color: Color(0xFF14181B),
-                                    ),
-                                    Padding(
-                                      padding: EdgeInsetsDirectional.fromSTEB(
-                                          0.0, 0.0, 0.0, 16.0),
-                                      child: FFButtonWidget(
+                              Align(
+                                alignment: AlignmentDirectional(0.0, 0.0),
+                                child: Padding(
+                                  padding: EdgeInsets.all(24.0),
+                                  child: Column(
+                                    mainAxisSize: MainAxisSize.max,
+                                    mainAxisAlignment: MainAxisAlignment.center,
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.center,
+                                    children: [
+                                      FFButtonWidget(
                                         onPressed: () async {
                                           context.pushNamed(
-                                              PassengerLoginWidget.routeName);
+                                              PassengerSignUpWidget.routeName);
                                         },
-                                        text: 'Existing Passenger',
+                                        text: 'New Passenger',
                                         options: FFButtonOptions(
                                           width: 370.0,
-                                          height: 44.0,
+                                          height: 40.0,
                                           padding:
                                               EdgeInsetsDirectional.fromSTEB(
-                                                  0.0, 0.0, 0.0, 0.0),
+                                                  16.0, 0.0, 16.0, 0.0),
                                           iconPadding:
                                               EdgeInsetsDirectional.fromSTEB(
                                                   0.0, 0.0, 0.0, 0.0),
@@ -209,40 +160,80 @@ class _PassengerFirstPageWidgetState extends State<PassengerFirstPageWidget> {
                                                     letterSpacing: 0.0,
                                                     useGoogleFonts: false,
                                                   ),
-                                          elevation: 3.0,
-                                          borderSide: BorderSide(
-                                            color: Colors.transparent,
-                                            width: 1.0,
-                                          ),
+                                          elevation: 0.0,
                                           borderRadius:
-                                              BorderRadius.circular(12.0),
+                                              BorderRadius.circular(8.0),
                                         ),
                                       ),
-                                    ),
-                                  ],
+                                      Divider(
+                                        thickness: 2.0,
+                                        color: Color(0xFF14181B),
+                                      ),
+                                      Padding(
+                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                            0.0, 0.0, 0.0, 16.0),
+                                        child: FFButtonWidget(
+                                          onPressed: () async {
+                                            context.pushNamed(
+                                                PassengerLoginWidget.routeName);
+                                          },
+                                          text: 'Existing Passenger',
+                                          options: FFButtonOptions(
+                                            width: 370.0,
+                                            height: 44.0,
+                                            padding:
+                                                EdgeInsetsDirectional.fromSTEB(
+                                                    0.0, 0.0, 0.0, 0.0),
+                                            iconPadding:
+                                                EdgeInsetsDirectional.fromSTEB(
+                                                    0.0, 0.0, 0.0, 0.0),
+                                            color: FlutterFlowTheme.of(context)
+                                                .primary,
+                                            textStyle:
+                                                FlutterFlowTheme.of(context)
+                                                    .titleSmall
+                                                    .override(
+                                                      fontFamily:
+                                                          'Google Sans Family',
+                                                      color: Colors.white,
+                                                      letterSpacing: 0.0,
+                                                      useGoogleFonts: false,
+                                                    ),
+                                            elevation: 3.0,
+                                            borderSide: BorderSide(
+                                              color: Colors.transparent,
+                                              width: 1.0,
+                                            ),
+                                            borderRadius:
+                                                BorderRadius.circular(12.0),
+                                          ),
+                                        ),
+                                      ),
+                                    ],
+                                  ),
                                 ),
                               ),
-                            ),
-                          ],
+                            ],
+                          ),
                         ),
                       ),
                       Align(
-                        alignment: AlignmentDirectional(-0.02, 0.51),
+                        alignment: AlignmentDirectional(-0.01, -0.9),
                         child: ClipRRect(
                           borderRadius: BorderRadius.circular(8.0),
                           child: Image.asset(
                             'assets/images/VanGuard_(Phone_Wallpaper)_(2).png',
-                            width: 200.0,
-                            height: 200.0,
+                            width: 175.0,
+                            height: 175.0,
                             fit: BoxFit.cover,
                           ),
                         ),
                       ),
                       Align(
-                        alignment: AlignmentDirectional(0.12, 0.84),
+                        alignment: AlignmentDirectional(0.0, 0.66),
                         child: Padding(
                           padding: EdgeInsetsDirectional.fromSTEB(
-                              0.0, 0.0, 0.0, 16.0),
+                              20.0, 0.0, 20.0, 16.0),
                           child: FFButtonWidget(
                             onPressed: () async {
                               context.pushNamed(HomePageWidget.routeName);

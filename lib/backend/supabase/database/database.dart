@@ -5,5 +5,6 @@ export '../supabase.dart';
 export 'row.dart';
 export 'table.dart';
 
-export 'tables/user_locations.dart';
+export 'tables/gps_sessions.dart';
+export 'tables/records.dart';
 export 'tables/drivers.dart';

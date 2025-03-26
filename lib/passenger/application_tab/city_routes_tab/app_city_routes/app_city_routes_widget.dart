@@ -1,7 +1,9 @@
+import '/flutter_flow/flutter_flow_drop_down.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
+import '/flutter_flow/form_field_controller.dart';
 import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
@@ -58,7 +60,7 @@ class _AppCityRoutesWidgetState extends State<AppCityRoutesWidget> {
             borderWidth: 1.0,
             buttonSize: 60.0,
             icon: Icon(
-              Icons.arrow_back_rounded,
+              Icons.arrow_back_sharp,
               color: Colors.white,
               size: 30.0,
             ),
@@ -66,8 +68,16 @@ class _AppCityRoutesWidgetState extends State<AppCityRoutesWidget> {
               context.pop();
             },
           ),
+          title: Text(
+            'City Routes',
+            style: FlutterFlowTheme.of(context).headlineSmall.override(
+                  fontFamily: 'Google Sans Family',
+                  letterSpacing: 0.0,
+                  useGoogleFonts: false,
+                ),
+          ),
           actions: [],
-          centerTitle: false,
+          centerTitle: true,
           elevation: 2.0,
         ),
         body: SafeArea(
@@ -86,82 +96,130 @@ class _AppCityRoutesWidgetState extends State<AppCityRoutesWidget> {
                     children: [
                       Container(
                         width: 100.0,
-                        height: 30.0,
+                        height: 59.3,
                         decoration: BoxDecoration(
                           color:
                               FlutterFlowTheme.of(context).secondaryBackground,
                         ),
-                      ),
-                      Container(
-                        width: 100.0,
-                        height: 30.0,
-                        decoration: BoxDecoration(
-                          color:
-                              FlutterFlowTheme.of(context).secondaryBackground,
-                        ),
-                      ),
-                      Container(
-                        width: 100.0,
-                        height: 130.0,
-                        decoration: BoxDecoration(
-                          color:
-                              FlutterFlowTheme.of(context).secondaryBackground,
-                        ),
-                        child: Stack(
-                          children: [
-                            Align(
-                              alignment: AlignmentDirectional(0.0, 0.0),
-                              child: ClipRRect(
-                                borderRadius: BorderRadius.circular(8.0),
-                                child: Image.network(
-                                  'https://i.pinimg.com/736x/d3/ec/06/d3ec0656e7cf5c0321ec3821e312dbf7.jpg',
-                                  width: 360.0,
-                                  height: 160.0,
-                                  fit: BoxFit.cover,
+                        child: Padding(
+                          padding: EdgeInsetsDirectional.fromSTEB(
+                              20.0, 0.0, 20.0, 0.0),
+                          child: FlutterFlowDropDown<String>(
+                            controller: _model.dropDownValueController ??=
+                                FormFieldController<String>(null),
+                            options: [
+                              'Naga City',
+                              'Sorsogon City',
+                              'TabacoCity',
+                              'Legazpi City'
+                            ],
+                            onChanged: (val) =>
+                                safeSetState(() => _model.dropDownValue = val),
+                            width: 200.0,
+                            height: 145.8,
+                            textStyle: FlutterFlowTheme.of(context)
+                                .bodyMedium
+                                .override(
+                                  fontFamily: 'Google Sans Family',
+                                  letterSpacing: 0.0,
+                                  useGoogleFonts: false,
                                 ),
-                              ),
+                            hintText: 'Select...',
+                            icon: Icon(
+                              Icons.keyboard_arrow_down_rounded,
+                              color: FlutterFlowTheme.of(context).secondaryText,
+                              size: 24.0,
                             ),
-                          ],
+                            fillColor: FlutterFlowTheme.of(context)
+                                .secondaryBackground,
+                            elevation: 2.0,
+                            borderColor: Colors.transparent,
+                            borderWidth: 0.0,
+                            borderRadius: 8.0,
+                            margin: EdgeInsetsDirectional.fromSTEB(
+                                12.0, 0.0, 12.0, 0.0),
+                            hidesUnderline: true,
+                            isOverButton: false,
+                            isSearchable: false,
+                            isMultiSelect: false,
+                          ),
                         ),
                       ),
                       Container(
                         width: 100.0,
-                        height: 30.0,
+                        height: 56.61,
                         decoration: BoxDecoration(
                           color:
                               FlutterFlowTheme.of(context).secondaryBackground,
                         ),
                         child: Align(
                           alignment: AlignmentDirectional(0.0, 0.0),
-                          child: Text(
-                            'City Routes',
-                            style: FlutterFlowTheme.of(context)
-                                .bodyMedium
-                                .override(
+                          child: Padding(
+                            padding: EdgeInsetsDirectional.fromSTEB(
+                                0.0, 12.0, 0.0, 24.0),
+                            child: Text(
+                              'Determine your current loccation to see routes.',
+                              style: FlutterFlowTheme.of(context)
+                                  .labelMedium
+                                  .override(
+                                    fontFamily: 'Google Sans Family',
+                                    letterSpacing: 0.0,
+                                    useGoogleFonts: false,
+                                  ),
+                            ),
+                          ),
+                        ),
+                      ),
+                      Container(
+                        width: 100.0,
+                        height: 30.0,
+                        decoration: BoxDecoration(
+                          color:
+                              FlutterFlowTheme.of(context).secondaryBackground,
+                        ),
+                      ),
+                      Text(
+                        'Available Routes / Schedule',
+                        textAlign: TextAlign.center,
+                        style:
+                            FlutterFlowTheme.of(context).headlineSmall.override(
                                   fontFamily: 'Google Sans Family',
-                                  fontSize: 18.0,
                                   letterSpacing: 0.0,
                                   useGoogleFonts: false,
                                 ),
+                      ),
+                      Container(
+                        width: 100.0,
+                        height: 30.0,
+                        decoration: BoxDecoration(
+                          color:
+                              FlutterFlowTheme.of(context).secondaryBackground,
+                        ),
+                      ),
+                      Container(
+                        width: 100.0,
+                        height: 463.64,
+                        decoration: BoxDecoration(
+                          color:
+                              FlutterFlowTheme.of(context).secondaryBackground,
+                        ),
+                        child: Container(
+                          width: 100.0,
+                          height: 30.0,
+                          decoration: BoxDecoration(
+                            color: FlutterFlowTheme.of(context)
+                                .secondaryBackground,
+                            image: DecorationImage(
+                              fit: BoxFit.cover,
+                              image: Image.asset(
+                                'assets/images/photo-1436891620584-47fd0e565afb?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w0NTYyMDF8MHwxfHNlYXJjaHwxOXx8c3Vuc2V0fGVufDB8fHx8MTc0Mjk2NjI2Nnww&ixlib=rb-4.0.3&q=80&w=1080',
+                              ).image,
+                            ),
                           ),
                         ),
                       ),
                     ],
                   ),
-                ),
-              ),
-              Container(
-                width: 100.0,
-                height: 30.0,
-                decoration: BoxDecoration(
-                  color: FlutterFlowTheme.of(context).secondaryBackground,
-                ),
-              ),
-              Container(
-                width: 100.0,
-                height: 30.0,
-                decoration: BoxDecoration(
-                  color: FlutterFlowTheme.of(context).secondaryBackground,
                 ),
               ),
             ],

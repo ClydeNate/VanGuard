@@ -7,13 +7,17 @@ import 'package:flutter/material.dart';
 // Begin custom action code
 // DO NOT REMOVE OR MODIFY THE CODE ABOVE!
 
+import 'package:supabase_flutter/supabase_flutter.dart';
+
 Future<String> finishGPSTracking(
   bool isTracking,
   bool isPaused,
   String? currentSessionID,
-  String routePoints,
+  List<String> routePoints, // Changed from String to List<String>
   DateTimeRange locationTimer,
 ) async {
+  final supabase = Supabase.instance.client;
+
   // Check if tracking is active
   if (!isTracking) {
     return 'Tracking is not active.';
@@ -24,27 +28,32 @@ Future<String> finishGPSTracking(
     return 'Tracking is paused. Please resume before finishing.';
   }
 
-  // Save the current session data
+  // Validate session ID
+  if (currentSessionID == null) {
+    return 'Invalid session ID.';
+  }
+
+  // Convert route points to JSON format
+  final routePointsJson = routePoints.map((point) => point).toList();
+
   try {
-    // Here you would typically save the session data to a database or a file
-    // For demonstration, we will just print the data
-    print('Saving session...');
-    print('Session ID: $currentSessionID');
-    print('Route Points: $routePoints');
-    print('Location Timer: ${locationTimer.start} to ${locationTimer.end}');
+    // Save session data to Supabase
+    final response = await supabase
+        .from('gps_sessions')
+        .update({
+          'route_points': routePointsJson,
+          'end_time': locationTimer.end.toIso8601String(),
+          'status': 'completed', // Mark session as completed
+        })
+        .eq('id', currentSessionID)
+        .select();
 
-    // Simulate saving data with a delay
-    await Future.delayed(Duration(seconds: 2));
+    if (response.isEmpty) {
+      return 'Error: Session not found or update failed.';
+    }
 
-    // Reset the tracking state
-    // This could involve updating state management variables or notifying listeners
-    // For example, if using a state management solution like Provider or Riverpod:
-    // context.read<TrackingState>().resetTracking();
-
-    // Return success message
     return 'GPS tracking session completed successfully.';
   } catch (e) {
-    // Handle any errors that may occur during the saving process
     return 'Error saving session: ${e.toString()}';
   }
 }

@@ -1,3 +1,4 @@
+import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
@@ -31,9 +32,6 @@ class _DriverPrevRecordsWidgetState extends State<DriverPrevRecordsWidget> {
   void initState() {
     super.initState();
     _model = createModel(context, () => DriverPrevRecordsModel());
-
-    _model.textController ??= TextEditingController();
-    _model.textFieldFocusNode ??= FocusNode();
   }
 
   @override
@@ -56,22 +54,31 @@ class _DriverPrevRecordsWidgetState extends State<DriverPrevRecordsWidget> {
         appBar: AppBar(
           backgroundColor: FlutterFlowTheme.of(context).primary,
           automaticallyImplyLeading: false,
-          leading: InkWell(
-            splashColor: Colors.transparent,
-            focusColor: Colors.transparent,
-            hoverColor: Colors.transparent,
-            highlightColor: Colors.transparent,
-            onTap: () async {
-              context.safePop();
-            },
-            child: Icon(
-              Icons.arrow_back,
-              color: FlutterFlowTheme.of(context).primaryText,
-              size: 24.0,
+          leading: FlutterFlowIconButton(
+            borderColor: Colors.transparent,
+            borderRadius: 30.0,
+            borderWidth: 1.0,
+            buttonSize: 60.0,
+            icon: Icon(
+              Icons.arrow_back_sharp,
+              color: Colors.white,
+              size: 30.0,
             ),
+            onPressed: () async {
+              context.pop();
+            },
+          ),
+          title: Text(
+            'Previous Records',
+            style: FlutterFlowTheme.of(context).titleMedium.override(
+                  fontFamily: 'Google Sans Family',
+                  fontSize: 24.0,
+                  letterSpacing: 0.0,
+                  useGoogleFonts: false,
+                ),
           ),
           actions: [],
-          centerTitle: false,
+          centerTitle: true,
           elevation: 2.0,
         ),
         body: SafeArea(
@@ -80,83 +87,6 @@ class _DriverPrevRecordsWidgetState extends State<DriverPrevRecordsWidget> {
             mainAxisSize: MainAxisSize.max,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Container(
-                width: 404.0,
-                height: 80.0,
-                decoration: BoxDecoration(
-                  color: FlutterFlowTheme.of(context).secondaryBackground,
-                ),
-                child: Align(
-                  alignment: AlignmentDirectional(0.0, 0.0),
-                  child: Text(
-                    'Previous Records',
-                    style: FlutterFlowTheme.of(context).displaySmall.override(
-                          fontFamily: 'Google Sans Family',
-                          letterSpacing: 0.0,
-                          useGoogleFonts: false,
-                        ),
-                  ),
-                ),
-              ),
-              Padding(
-                padding: EdgeInsetsDirectional.fromSTEB(16.0, 4.0, 16.0, 0.0),
-                child: TextFormField(
-                  controller: _model.textController,
-                  focusNode: _model.textFieldFocusNode,
-                  obscureText: false,
-                  decoration: InputDecoration(
-                    isDense: false,
-                    labelText: 'Search...',
-                    labelStyle:
-                        FlutterFlowTheme.of(context).labelMedium.override(
-                              fontFamily: 'Inter',
-                              letterSpacing: 0.0,
-                            ),
-                    enabledBorder: OutlineInputBorder(
-                      borderSide: BorderSide(
-                        color: FlutterFlowTheme.of(context).primaryBackground,
-                        width: 2.0,
-                      ),
-                      borderRadius: BorderRadius.circular(8.0),
-                    ),
-                    focusedBorder: OutlineInputBorder(
-                      borderSide: BorderSide(
-                        color: FlutterFlowTheme.of(context).primary,
-                        width: 2.0,
-                      ),
-                      borderRadius: BorderRadius.circular(8.0),
-                    ),
-                    errorBorder: OutlineInputBorder(
-                      borderSide: BorderSide(
-                        color: FlutterFlowTheme.of(context).error,
-                        width: 2.0,
-                      ),
-                      borderRadius: BorderRadius.circular(8.0),
-                    ),
-                    focusedErrorBorder: OutlineInputBorder(
-                      borderSide: BorderSide(
-                        color: FlutterFlowTheme.of(context).error,
-                        width: 2.0,
-                      ),
-                      borderRadius: BorderRadius.circular(8.0),
-                    ),
-                    filled: true,
-                    fillColor: FlutterFlowTheme.of(context).primaryBackground,
-                    prefixIcon: Icon(
-                      Icons.search_outlined,
-                      color: FlutterFlowTheme.of(context).secondaryText,
-                    ),
-                  ),
-                  style: FlutterFlowTheme.of(context).bodyMedium.override(
-                        fontFamily: 'Google Sans Family',
-                        letterSpacing: 0.0,
-                        useGoogleFonts: false,
-                      ),
-                  maxLines: null,
-                  validator:
-                      _model.textControllerValidator.asValidator(context),
-                ),
-              ),
               Expanded(
                 child: Align(
                   alignment: AlignmentDirectional(0.0, -1.0),
@@ -175,30 +105,34 @@ class _DriverPrevRecordsWidgetState extends State<DriverPrevRecordsWidget> {
                                 .secondaryBackground,
                           ),
                         ),
-                        FFButtonWidget(
-                          onPressed: () async {
-                            context.pushNamed(
-                                DriverPrevRecordsExample1Widget.routeName);
-                          },
-                          text: 'Record #1',
-                          options: FFButtonOptions(
-                            height: 120.0,
-                            padding: EdgeInsetsDirectional.fromSTEB(
-                                0.0, 0.0, 0.0, 0.0),
-                            iconPadding: EdgeInsetsDirectional.fromSTEB(
-                                0.0, 0.0, 0.0, 0.0),
-                            color: FlutterFlowTheme.of(context).primary,
-                            textStyle: FlutterFlowTheme.of(context)
-                                .titleSmall
-                                .override(
-                                  fontFamily: 'Google Sans Family',
-                                  color: Colors.white,
-                                  fontSize: 24.0,
-                                  letterSpacing: 0.0,
-                                  useGoogleFonts: false,
-                                ),
-                            elevation: 0.0,
-                            borderRadius: BorderRadius.circular(8.0),
+                        Padding(
+                          padding: EdgeInsetsDirectional.fromSTEB(
+                              20.0, 0.0, 20.0, 0.0),
+                          child: FFButtonWidget(
+                            onPressed: () async {
+                              context.pushNamed(
+                                  DriverPrevRecordsExWidget.routeName);
+                            },
+                            text: 'Record #1',
+                            options: FFButtonOptions(
+                              height: 120.0,
+                              padding: EdgeInsetsDirectional.fromSTEB(
+                                  0.0, 0.0, 0.0, 0.0),
+                              iconPadding: EdgeInsetsDirectional.fromSTEB(
+                                  0.0, 0.0, 0.0, 0.0),
+                              color: FlutterFlowTheme.of(context).primary,
+                              textStyle: FlutterFlowTheme.of(context)
+                                  .titleSmall
+                                  .override(
+                                    fontFamily: 'Google Sans Family',
+                                    color: Colors.white,
+                                    fontSize: 24.0,
+                                    letterSpacing: 0.0,
+                                    useGoogleFonts: false,
+                                  ),
+                              elevation: 0.0,
+                              borderRadius: BorderRadius.circular(8.0),
+                            ),
                           ),
                         ),
                         Container(
@@ -209,35 +143,49 @@ class _DriverPrevRecordsWidgetState extends State<DriverPrevRecordsWidget> {
                                 .secondaryBackground,
                           ),
                         ),
-                        FFButtonWidget(
-                          onPressed: () async {
-                            context.pushNamed(
-                                DriverPrevRecordsExample2Widget.routeName);
-                          },
-                          text: 'Record #2',
-                          options: FFButtonOptions(
-                            height: 120.0,
-                            padding: EdgeInsetsDirectional.fromSTEB(
-                                0.0, 0.0, 0.0, 0.0),
-                            iconPadding: EdgeInsetsDirectional.fromSTEB(
-                                0.0, 0.0, 0.0, 0.0),
-                            color: FlutterFlowTheme.of(context).primary,
-                            textStyle: FlutterFlowTheme.of(context)
-                                .titleSmall
-                                .override(
-                                  fontFamily: 'Google Sans Family',
-                                  color: Colors.white,
-                                  fontSize: 24.0,
-                                  letterSpacing: 0.0,
-                                  useGoogleFonts: false,
-                                ),
-                            elevation: 0.0,
-                            borderRadius: BorderRadius.circular(8.0),
+                        Container(
+                          width: 100.0,
+                          height: 22.2,
+                          decoration: BoxDecoration(
+                            color: FlutterFlowTheme.of(context)
+                                .secondaryBackground,
+                          ),
+                          child: Container(
+                            width: 100.0,
+                            height: 80.0,
+                            decoration: BoxDecoration(
+                              color: FlutterFlowTheme.of(context)
+                                  .secondaryBackground,
+                            ),
+                            child: Align(
+                              alignment: AlignmentDirectional(0.0, 0.0),
+                              child: Text(
+                                '- End of Records -',
+                                style: FlutterFlowTheme.of(context)
+                                    .displaySmall
+                                    .override(
+                                      fontFamily: 'Google Sans Family',
+                                      color: FlutterFlowTheme.of(context)
+                                          .secondaryText,
+                                      fontSize: 16.0,
+                                      letterSpacing: 0.0,
+                                      fontWeight: FontWeight.normal,
+                                      useGoogleFonts: false,
+                                    ),
+                              ),
+                            ),
                           ),
                         ),
                       ],
                     ),
                   ),
+                ),
+              ),
+              Container(
+                width: 100.0,
+                height: 22.2,
+                decoration: BoxDecoration(
+                  color: FlutterFlowTheme.of(context).secondaryBackground,
                 ),
               ),
             ],

@@ -50,13 +50,6 @@ class _HomePageWidgetState extends State<HomePageWidget> {
       child: Scaffold(
         key: scaffoldKey,
         backgroundColor: FlutterFlowTheme.of(context).secondaryBackground,
-        appBar: AppBar(
-          backgroundColor: FlutterFlowTheme.of(context).primary,
-          automaticallyImplyLeading: false,
-          actions: [],
-          centerTitle: false,
-          elevation: 2.0,
-        ),
         body: SafeArea(
           top: true,
           child: Row(
@@ -74,7 +67,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                   child: Stack(
                     children: [
                       Align(
-                        alignment: AlignmentDirectional(0.0, 0.3),
+                        alignment: AlignmentDirectional(0.0, 0.45),
                         child: SingleChildScrollView(
                           child: Column(
                             mainAxisSize: MainAxisSize.max,
@@ -82,7 +75,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                             children: [
                               Container(
                                 width: double.infinity,
-                                height: 191.49,
+                                height: 191.5,
                                 decoration: BoxDecoration(
                                   color: FlutterFlowTheme.of(context)
                                       .secondaryBackground,
@@ -100,7 +93,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                     'Welcome to \nVanGuard',
                                     textAlign: TextAlign.center,
                                     style: FlutterFlowTheme.of(context)
-                                        .displaySmall
+                                        .displayMedium
                                         .override(
                                           fontFamily: 'Google Sans Family',
                                           letterSpacing: 0.0,
@@ -216,6 +209,52 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                           ),
                                         ),
                                       ),
+                                      Align(
+                                        alignment:
+                                            AlignmentDirectional(0.27, 1.0),
+                                        child: Padding(
+                                          padding:
+                                              EdgeInsetsDirectional.fromSTEB(
+                                                  20.0, 0.0, 20.0, 16.0),
+                                          child: FFButtonWidget(
+                                            onPressed: () {
+                                              print('Button pressed ...');
+                                            },
+                                            text: 'Exit Application',
+                                            options: FFButtonOptions(
+                                              width: 370.0,
+                                              height: 44.0,
+                                              padding: EdgeInsetsDirectional
+                                                  .fromSTEB(0.0, 0.0, 0.0, 0.0),
+                                              iconPadding: EdgeInsetsDirectional
+                                                  .fromSTEB(0.0, 0.0, 0.0, 0.0),
+                                              color:
+                                                  FlutterFlowTheme.of(context)
+                                                      .primary,
+                                              textStyle:
+                                                  FlutterFlowTheme.of(context)
+                                                      .titleSmall
+                                                      .override(
+                                                        fontFamily:
+                                                            'Google Sans Family',
+                                                        color:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .primaryText,
+                                                        letterSpacing: 0.0,
+                                                        useGoogleFonts: false,
+                                                      ),
+                                              elevation: 3.0,
+                                              borderSide: BorderSide(
+                                                color: Colors.transparent,
+                                                width: 1.0,
+                                              ),
+                                              borderRadius:
+                                                  BorderRadius.circular(12.0),
+                                            ),
+                                          ),
+                                        ),
+                                      ),
                                     ],
                                   ),
                                 ),
@@ -225,7 +264,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                         ),
                       ),
                       Align(
-                        alignment: AlignmentDirectional(-0.01, -0.87),
+                        alignment: AlignmentDirectional(-0.01, -0.73),
                         child: ClipRRect(
                           borderRadius: BorderRadius.circular(8.0),
                           child: Image.asset(

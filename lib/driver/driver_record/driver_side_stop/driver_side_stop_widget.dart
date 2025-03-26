@@ -3,6 +3,7 @@ import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/custom_code/actions/index.dart' as actions;
+import '/index.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -79,6 +80,18 @@ class _DriverSideStopWidgetState extends State<DriverSideStopWidget> {
         appBar: AppBar(
           backgroundColor: FlutterFlowTheme.of(context).primary,
           automaticallyImplyLeading: false,
+          title: Align(
+            alignment: AlignmentDirectional(0.0, 0.0),
+            child: Text(
+              'Record Data',
+              style: FlutterFlowTheme.of(context).titleMedium.override(
+                    fontFamily: 'Google Sans Family',
+                    fontSize: 24.0,
+                    letterSpacing: 0.0,
+                    useGoogleFonts: false,
+                  ),
+            ),
+          ),
           actions: [],
           centerTitle: false,
           elevation: 2.0,
@@ -138,74 +151,88 @@ class _DriverSideStopWidgetState extends State<DriverSideStopWidget> {
                   width: MediaQuery.sizeOf(context).width * 1.0,
                   height: MediaQuery.sizeOf(context).height * 0.749,
                   decoration: BoxDecoration(),
-                  child: Stack(
-                    children: [
-                      Align(
-                        alignment: AlignmentDirectional(0.1, 0.43),
-                        child: Text(
-                          'Press Pause or Stop to record the progress',
-                          style:
-                              FlutterFlowTheme.of(context).labelMedium.override(
-                                    fontFamily: 'Inter',
-                                    letterSpacing: 0.0,
-                                  ),
+                  child: InkWell(
+                    splashColor: Colors.transparent,
+                    focusColor: Colors.transparent,
+                    hoverColor: Colors.transparent,
+                    highlightColor: Colors.transparent,
+                    onTap: () async {
+                      context.pushNamed(DriverSideFinishedWidget.routeName);
+                    },
+                    child: Stack(
+                      children: [
+                        Align(
+                          alignment: AlignmentDirectional(0.1, 0.43),
+                          child: Text(
+                            'Press Pause or Stop to record the progress',
+                            style: FlutterFlowTheme.of(context)
+                                .labelMedium
+                                .override(
+                                  fontFamily: 'Google Sans Family',
+                                  letterSpacing: 0.0,
+                                  useGoogleFonts: false,
+                                ),
+                          ),
                         ),
-                      ),
-                      Align(
-                        alignment: AlignmentDirectional(0.72, 0.34),
-                        child: Text(
-                          '00:00',
-                          style: FlutterFlowTheme.of(context)
-                              .labelLarge
-                              .override(
-                                fontFamily: 'Google Sans Family',
-                                color: FlutterFlowTheme.of(context).alternate,
-                                letterSpacing: 0.0,
-                                fontWeight: FontWeight.w800,
-                                useGoogleFonts: false,
-                              ),
+                        Align(
+                          alignment: AlignmentDirectional(0.72, 0.34),
+                          child: Text(
+                            '00:00',
+                            style: FlutterFlowTheme.of(context)
+                                .labelLarge
+                                .override(
+                                  fontFamily: 'Google Sans Family',
+                                  color: FlutterFlowTheme.of(context).alternate,
+                                  letterSpacing: 0.0,
+                                  fontWeight: FontWeight.w800,
+                                  useGoogleFonts: false,
+                                ),
+                          ),
                         ),
-                      ),
-                      Align(
-                        alignment: AlignmentDirectional(0.75, 0.21),
-                        child: Text(
-                          'Speed ',
-                          style:
-                              FlutterFlowTheme.of(context).labelLarge.override(
-                                    fontFamily: 'Google Sans Family',
-                                    color: FlutterFlowTheme.of(context)
-                                        .primaryBackground,
-                                    letterSpacing: 0.0,
-                                    fontWeight: FontWeight.w800,
-                                    useGoogleFonts: false,
-                                  ),
+                        Align(
+                          alignment: AlignmentDirectional(0.75, 0.21),
+                          child: Text(
+                            'Speed ',
+                            style: FlutterFlowTheme.of(context)
+                                .labelLarge
+                                .override(
+                                  fontFamily: 'Google Sans Family',
+                                  color: FlutterFlowTheme.of(context)
+                                      .primaryBackground,
+                                  letterSpacing: 0.0,
+                                  fontWeight: FontWeight.w800,
+                                  useGoogleFonts: false,
+                                ),
+                          ),
                         ),
-                      ),
-                      Align(
-                        alignment: AlignmentDirectional(-0.68, 0.21),
-                        child: Text(
-                          'Speed ',
-                          style:
-                              FlutterFlowTheme.of(context).labelLarge.override(
-                                    fontFamily: 'Google Sans Family',
-                                    letterSpacing: 0.0,
-                                    useGoogleFonts: false,
-                                  ),
+                        Align(
+                          alignment: AlignmentDirectional(-0.68, 0.21),
+                          child: Text(
+                            'Speed ',
+                            style: FlutterFlowTheme.of(context)
+                                .labelLarge
+                                .override(
+                                  fontFamily: 'Google Sans Family',
+                                  letterSpacing: 0.0,
+                                  useGoogleFonts: false,
+                                ),
+                          ),
                         ),
-                      ),
-                      Align(
-                        alignment: AlignmentDirectional(-0.63, 0.32),
-                        child: Text(
-                          'Time Allocated',
-                          style:
-                              FlutterFlowTheme.of(context).labelLarge.override(
-                                    fontFamily: 'Google Sans Family',
-                                    letterSpacing: 0.0,
-                                    useGoogleFonts: false,
-                                  ),
+                        Align(
+                          alignment: AlignmentDirectional(-0.63, 0.32),
+                          child: Text(
+                            'Time Allocated',
+                            style: FlutterFlowTheme.of(context)
+                                .labelLarge
+                                .override(
+                                  fontFamily: 'Google Sans Family',
+                                  letterSpacing: 0.0,
+                                  useGoogleFonts: false,
+                                ),
+                          ),
                         ),
-                      ),
-                    ],
+                      ],
+                    ),
                   ),
                 ),
               ),

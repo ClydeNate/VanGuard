@@ -81,6 +81,18 @@ class _DriverSideFinishedWidgetState extends State<DriverSideFinishedWidget> {
         appBar: AppBar(
           backgroundColor: FlutterFlowTheme.of(context).primary,
           automaticallyImplyLeading: false,
+          title: Align(
+            alignment: AlignmentDirectional(0.0, 0.0),
+            child: Text(
+              'Record Data',
+              style: FlutterFlowTheme.of(context).titleMedium.override(
+                    fontFamily: 'Google Sans Family',
+                    fontSize: 24.0,
+                    letterSpacing: 0.0,
+                    useGoogleFonts: false,
+                  ),
+            ),
+          ),
           actions: [],
           centerTitle: false,
           elevation: 2.0,
@@ -148,8 +160,9 @@ class _DriverSideFinishedWidgetState extends State<DriverSideFinishedWidget> {
                           'Press Pause or Stop to record the progress',
                           style:
                               FlutterFlowTheme.of(context).labelMedium.override(
-                                    fontFamily: 'Inter',
+                                    fontFamily: 'Google Sans Family',
                                     letterSpacing: 0.0,
+                                    useGoogleFonts: false,
                                   ),
                         ),
                       ),
@@ -220,7 +233,7 @@ class _DriverSideFinishedWidgetState extends State<DriverSideFinishedWidget> {
                                     fontFamily: 'Google Sans Family',
                                     color: FlutterFlowTheme.of(context)
                                         .primaryBackground,
-                                    fontSize: 31.0,
+                                    fontSize: 32.0,
                                     letterSpacing: 0.0,
                                     fontWeight: FontWeight.w800,
                                     useGoogleFonts: false,

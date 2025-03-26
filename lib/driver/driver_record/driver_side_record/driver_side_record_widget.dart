@@ -3,6 +3,7 @@ import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/custom_code/actions/index.dart' as actions;
+import '/index.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -79,6 +80,18 @@ class _DriverSideRecordWidgetState extends State<DriverSideRecordWidget> {
         appBar: AppBar(
           backgroundColor: FlutterFlowTheme.of(context).primary,
           automaticallyImplyLeading: false,
+          title: Align(
+            alignment: AlignmentDirectional(0.0, 0.0),
+            child: Text(
+              'Record Data',
+              style: FlutterFlowTheme.of(context).titleMedium.override(
+                    fontFamily: 'Google Sans Family',
+                    fontSize: 24.0,
+                    letterSpacing: 0.0,
+                    useGoogleFonts: false,
+                  ),
+            ),
+          ),
           actions: [],
           centerTitle: false,
           elevation: 2.0,
@@ -117,6 +130,9 @@ class _DriverSideRecordWidgetState extends State<DriverSideRecordWidget> {
                         FlutterFlowMarker(
                           _googleMapMarker.serialize(),
                           _googleMapMarker,
+                          () async {
+                            context.pushNamed(DriverSideStopWidget.routeName);
+                          },
                         ),
                     ],
                     markerColor: GoogleMarkerColor.red,
@@ -183,8 +199,9 @@ class _DriverSideRecordWidgetState extends State<DriverSideRecordWidget> {
                 child: Text(
                   'Press Record after confirming your location.',
                   style: FlutterFlowTheme.of(context).labelMedium.override(
-                        fontFamily: 'Inter',
+                        fontFamily: 'Google Sans Family',
                         letterSpacing: 0.0,
+                        useGoogleFonts: false,
                       ),
                 ),
               ),
