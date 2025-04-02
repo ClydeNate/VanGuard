@@ -1,7 +1,5 @@
 name: van_guard
-description: Developing a Predictive Model for Van Arrival and Departure Times
-	on the Legazpi City-Sorsogon City Route Using Random Forest Regression and
-	K-Nearest Neighbors for GPS Data Integration
+description: Developing a Predictive Model for Van Arrival and Departure Times on the Legazpi City-Sorsogon City Route Using Random Forest Regression andK-Nearest Neighbors for GPS Data Integration
 
 # The following line prevents the package from being accidentally published to
 # pub.dev using `pub publish`. This is preferred for private packages.
